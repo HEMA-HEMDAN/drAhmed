@@ -18,7 +18,7 @@ const WorkoutGallery = () => {
           Explore the dedication and results of our clients.
         </p>
       </div>
-
+        {/* hi */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 px-4 md:px-12 md:gap-8">
         {Gallerypics.map((pic) => (
           <div
