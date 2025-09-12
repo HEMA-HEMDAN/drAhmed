@@ -29,7 +29,7 @@ const App = () => {
   return (
     <>
       <div
-        className={`fixed top-0 left-0 w-full h-full flex items-center justify-center bg-white dark:bg-black transition-opacity duration-700 ${
+        className={`fixed top-0 left-0 w-full h-full flex items-center justify-center bg-white dark:bg-black transition-opacity duration-700 z-50 ${
           loading
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
