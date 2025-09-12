@@ -21,7 +21,10 @@ const Footer = () => {
           </div>
 
           <div className="w-full border-t border-neutral-800 mt-6" />
-          <p className="text-sm text-neutral-400">© 2025 HEMA. All rights reserved.</p>
+          <div className="w-full flex flex-col md:flex-row items-center md:items-center justify-between gap-2 text-sm text-neutral-400">
+            <p className="order-2 md:order-1">© 2025 Mohamed Wael. </p>
+            <p className="order-1 md:order-2">© 2025 HEMA.</p>
+          </div>
         </div>
       </div>
     </footer>
