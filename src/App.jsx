@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./sections/Home";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import NotFound from "./sections/NotFound";
 
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <WhatsAppButton />
+        <Footer />
       </BrowserRouter>
     </>
   );
