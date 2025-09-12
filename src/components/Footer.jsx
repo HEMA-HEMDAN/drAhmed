@@ -27,8 +27,8 @@ const Footer = () => {
 
           <div className="w-full border-t border-neutral-800 mt-6" />
           <div className="w-full flex flex-col md:flex-row items-center justify-between gap-2 text-sm text-neutral-400">
-            <p className="order-2 md:order-1">© 2025 Mohamed Wael.</p>
-            <p className="order-1 md:order-2">© 2025 HEMA.</p>
+            <a href="https://mohamedwael.vercel.app/" className="order-2 md:order-1">© 2025 Mohamed Wael.</a>
+            <a href="https://hema-cyan.vercel.app/" className="order-1 md:order-2">© 2025 HEMA.</a>
           </div>
         </div>
       </div>
