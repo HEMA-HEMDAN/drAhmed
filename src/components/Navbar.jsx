@@ -45,25 +45,15 @@ const Navbar = () => {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-0 right-0 m-4 px-4 py-2 rounded-xl flex justify-between items-center z-40
-                 bg-gradient-to-b 
-    from-[#0F818C] 
-    via-[#095259] 
-    via-64% 
-    to-[#042326]"
+      className="fixed top-0 left-0 right-0  px-4 py-2  flex justify-between items-center z-40 bg-gradient-to-r from-black via-[#333333] to-[#666666] shadow-lg"
     >
       {/* Logo */}
-      <Link to="/" className="text-white text-2xl flex flex-row items-center">
+      <Link to="/" className=" text-2xl flex flex-row items-center">
         <img
-          src="/home/face.png"
+          src="/assets/logo-dark.png"
           className="w-10 md:w-16 object-contain"
           alt="logo"
         />
-        <div className="w-[2px] md:w-1 md:h-12 h-8 bg-white"></div>
-        <div className="text-center ml-2 text-white text-[10px] md:text-sm font-bold">
-          <p>over dose</p>
-          <p>math</p>
-        </div>
       </Link>
 
       {/* Theme switch */}

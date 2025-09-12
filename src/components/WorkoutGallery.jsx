@@ -1,5 +1,5 @@
 import React from "react";
-import Gallerypics from "../consts/Gallerypics";
+import Gallerypics from "../consts/index.js";
 
 const WorkoutGallery = () => {
   return (
