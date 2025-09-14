@@ -8,43 +8,84 @@ const Pricing = () => {
   const [billingPeriod, setBillingPeriod] = useState("1month");
   const [selectedPlan, setSelectedPlan] = useState("economy");
 
+  // WhatsApp contact number
+  const whatsappNumber = "+201550043269";
+
+  // Function to generate WhatsApp message with plan details
+  const generateWhatsAppMessage = (
+    planKey,
+    planName,
+    price,
+    currency,
+    period
+  ) => {
+    const message =
+      language === "en"
+        ? `Hi! I'm interested in the ${planName} plan. Price: ${price} ${currency} ${period}. Can you provide more details?`
+        : `مرحباً! أنا مهتم بخطة ${planName}. السعر: ${price} ${currency} ${period}. هل يمكنك تقديم المزيد من التفاصيل؟`;
+
+    return encodeURIComponent(message);
+  };
+
+  // Function to handle WhatsApp click
+  const handleWhatsAppClick = (planKey) => {
+    const plan = plans[planKey];
+    const priceData = plan.prices[billingPeriod];
+    const message = generateWhatsAppMessage(
+      planKey,
+      plan.name,
+      priceData.price,
+      priceData.currency,
+      priceData.period
+    );
+
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   // Get localized data from constants
-  const billingOptions = texts.billingOptions.map(option => ({
+  const billingOptions = texts.billingOptions.map((option) => ({
     key: option.key,
-    label: language === 'en' ? option.labelEn : option.labelAr
+    label: language === "en" ? option.labelEn : option.labelAr,
   }));
 
-  const planOptions = texts.planOptions.map(option => ({
+  const planOptions = texts.planOptions.map((option) => ({
     key: option.key,
-    label: language === 'en' ? option.labelEn : option.labelAr
+    label: language === "en" ? option.labelEn : option.labelAr,
   }));
 
   // Transform pricing plans for easier use
   const plans = Object.keys(texts.pricingPlans).reduce((acc, key) => {
     const plan = texts.pricingPlans[key];
     acc[key] = {
-      name: language === 'en' ? plan.nameEn : plan.nameAr,
-      subtitle: language === 'en' ? plan.subtitleEn : plan.subtitleAr,
+      name: language === "en" ? plan.nameEn : plan.nameAr,
+      subtitle: language === "en" ? plan.subtitleEn : plan.subtitleAr,
       prices: plan.prices,
-      features: language === 'en' ? plan.featuresEn : plan.featuresAr,
-      buttonText: language === 'en' ? plan.buttonTextEn : plan.buttonTextAr,
+      features: language === "en" ? plan.featuresEn : plan.featuresAr,
+      buttonText: language === "en" ? plan.buttonTextEn : plan.buttonTextAr,
     };
     return acc;
   }, {});
 
   return (
-    <section className="bg-light text-dark dark:bg-dark dark:text-light py-20">
+    <section className=" text-dark dark:text-light py-20">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-sm text-dark/70 dark:text-light/70 mb-2">
-            {language === 'en' ? texts.pricingSection.titleEn : texts.pricingSection.titleAr}
+            {language === "en"
+              ? texts.pricingSection.titleEn
+              : texts.pricingSection.titleAr}
           </p>
           <h2 className="font-hahmlet text-4xl md:text-5xl font-bold mb-4">
-            {language === 'en' ? texts.pricingSection.headingEn : texts.pricingSection.headingAr}
+            {language === "en"
+              ? texts.pricingSection.headingEn
+              : texts.pricingSection.headingAr}
           </h2>
           <p className="text-dark/80 dark:text-light/80 max-w-2xl mx-auto mb-8">
-            {language === 'en' ? texts.pricingSection.subtitleEn : texts.pricingSection.subtitleAr}
+            {language === "en"
+              ? texts.pricingSection.subtitleEn
+              : texts.pricingSection.subtitleAr}
           </p>
 
           {/* Billing Period Toggle */}
@@ -67,7 +108,7 @@ const Pricing = () => {
           </div>
 
           {/* Mobile Plan Toggle */}
-          <div className="flex justify-center md:hidden mb-8">
+          <div className="flex justify-center lg:hidden mb-8">
             <div className="bg-black/10 dark:bg-white/10 rounded-lg p-1 flex flex-wrap gap-1">
               {planOptions.map((option) => (
                 <button
@@ -87,15 +128,19 @@ const Pricing = () => {
         </div>
 
         {/* Desktop Pricing Cards */}
-        <div className="hidden md:grid grid-cols-3 gap-8">
+        <div className="hidden lg:grid grid-cols-3 gap-8 ">
           {Object.entries(plans).map(([key, plan]) => (
             <div
               key={key}
-              className="border border-black/20 dark:border-white/20 rounded-lg p-8 bg-white/70 dark:bg-white/5 backdrop-blur-sm hover:bg-white/90 dark:hover:bg-white/10 transition-all duration-300"
+              className=" flex flex-col item-center justify-between h-full border border-black/20 dark:border-white/20 rounded-lg p-8 bg-white/70 dark:bg-white/5 backdrop-blur-sm hover:bg-white/90 dark:hover:bg-white/10 transition-all duration-300"
             >
               <div className="text-center mb-8">
-                <h3 className="font-hahmlet text-xl font-bold mb-2">{plan.name}</h3>
-                <p className="text-sm text-dark/60 dark:text-light/60 mb-4">{plan.subtitle}</p>
+                <h3 className="font-hahmlet text-xl font-bold mb-2">
+                  {plan.name}
+                </h3>
+                <p className="text-sm text-dark/60 dark:text-light/60 mb-4">
+                  {plan.subtitle}
+                </p>
                 <div className="mb-2">
                   <div className="flex items-center justify-center gap-2 mb-1">
                     <span className="text-4xl font-bold">
@@ -112,13 +157,16 @@ const Pricing = () => {
                 {plan.prices[billingPeriod].originalPrice && (
                   <div className="mb-2">
                     <span className="text-sm text-dark/50 dark:text-light/50 line-through">
-                      {plan.prices[billingPeriod].originalPrice} {plan.prices[billingPeriod].currency}
+                      {plan.prices[billingPeriod].originalPrice}{" "}
+                      {plan.prices[billingPeriod].currency}
                     </span>
                   </div>
                 )}
                 {plan.prices[billingPeriod].bonusEn && (
                   <p className="text-sm text-green-600 dark:text-green-400 font-medium">
-                    {language === 'en' ? plan.prices[billingPeriod].bonusEn : plan.prices[billingPeriod].bonusAr}
+                    {language === "en"
+                      ? plan.prices[billingPeriod].bonusEn
+                      : plan.prices[billingPeriod].bonusAr}
                   </p>
                 )}
               </div>
@@ -127,12 +175,17 @@ const Pricing = () => {
                 {plan.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-sm text-dark/80 dark:text-light/80">{feature}</span>
+                    <span className="text-sm text-dark/80 dark:text-light/80">
+                      {feature}
+                    </span>
                   </div>
                 ))}
               </div>
 
-              <button className="w-full bg-gradient-to-r from-green-400 to-lime-400 text-black font-bold py-3 px-6 rounded-lg hover:from-green-500 hover:to-lime-500 transition-all duration-200 transform hover:scale-105">
+              <button
+                onClick={() => handleWhatsAppClick(key)}
+                className="w-full bg-gradient-to-r from-green-400 to-lime-400 text-black font-bold py-3 px-6 rounded-lg hover:from-green-500 hover:to-lime-500 transition-all duration-200 transform hover:scale-105"
+              >
                 {plan.buttonText}
               </button>
             </div>
@@ -140,14 +193,18 @@ const Pricing = () => {
         </div>
 
         {/* Mobile Single Card */}
-        <div className="md:hidden">
+        <div className="lg:hidden w-full  flex item-center justify-center">
           {(() => {
             const plan = plans[selectedPlan];
             return (
               <div className="border border-black/20 dark:border-white/20 rounded-lg p-8 bg-white/70 dark:bg-white/5 backdrop-blur-sm">
                 <div className="text-center mb-8">
-                  <h3 className="font-hahmlet text-xl font-bold mb-2">{plan.name}</h3>
-                  <p className="text-sm text-dark/60 dark:text-light/60 mb-4">{plan.subtitle}</p>
+                  <h3 className="font-hahmlet text-xl font-bold mb-2">
+                    {plan.name}
+                  </h3>
+                  <p className="text-sm text-dark/60 dark:text-light/60 mb-4">
+                    {plan.subtitle}
+                  </p>
                   <div className="mb-2">
                     <div className="flex items-center justify-center gap-2 mb-1">
                       <span className="text-4xl font-bold">
@@ -164,7 +221,8 @@ const Pricing = () => {
                   {plan.prices[billingPeriod].originalPrice && (
                     <div className="mb-2">
                       <span className="text-sm text-dark/50 dark:text-light/50 line-through">
-                        {plan.prices[billingPeriod].originalPrice} {plan.prices[billingPeriod].currency}
+                        {plan.prices[billingPeriod].originalPrice}{" "}
+                        {plan.prices[billingPeriod].currency}
                       </span>
                     </div>
                   )}
@@ -179,12 +237,17 @@ const Pricing = () => {
                   {plan.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-sm text-dark/80 dark:text-light/80">{feature}</span>
+                      <span className="text-sm text-dark/80 dark:text-light/80">
+                        {feature}
+                      </span>
                     </div>
                   ))}
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-green-400 to-lime-400 text-black font-bold py-3 px-6 rounded-lg hover:from-green-500 hover:to-lime-500 transition-all duration-200 transform hover:scale-105">
+                <button
+                  onClick={() => handleWhatsAppClick(selectedPlan)}
+                  className="w-full bg-gradient-to-r from-green-400 to-lime-400 text-black font-bold py-3 px-6 rounded-lg hover:from-green-500 hover:to-lime-500 transition-all duration-200 transform hover:scale-105"
+                >
                   {plan.buttonText}
                 </button>
               </div>
