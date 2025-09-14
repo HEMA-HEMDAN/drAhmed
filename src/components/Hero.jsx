@@ -1,9 +1,10 @@
 import React from "react";
+import { CTA_TEXT, HEADLINE, SUBTITLE } from "../consts/index.js";
 
 const FitnessApp = () => {
   return (
     <section
-      className="relative min-h-screen w-full flex items-center justify-center mt-12 md:mt-20"
+      className="relative min-h-[95vh] md:min-h-[90vh] w-full flex items-center justify-center mt-12 md:mt-20"
       aria-label="Fitness hero section"
     >
       {/* Background Image */}
@@ -27,9 +28,12 @@ const FitnessApp = () => {
             mb-6
           "
         >
-          Transform Your Body.
-          <br className="hidden sm:block" />
-          Unlock Your Potential.
+          {HEADLINE.split("\n").map((line, i) => (
+            <span key={i}>
+              {line}
+              <br className={i === 0 ? "hidden sm:block" : "hidden"} />
+            </span>
+          ))}
         </h1>
 
         {/* Subtitle */}
@@ -41,13 +45,12 @@ const FitnessApp = () => {
             mb-10
           "
         >
-          Experience personalised training programmes that empower you to build
-          strength, shed pounds, and maintain motivation. Let's embark on this
-          fitness journey together!
+          {SUBTITLE}
         </p>
 
         {/* CTA Button */}
-        <button
+        <a
+          href="#trainer"
           className="
              inline-block
               px-5 sm:px-6
@@ -67,8 +70,8 @@ const FitnessApp = () => {
               text-sm sm:text-base md:text-lg
             "
         >
-          Start Training Today
-        </button>
+          {CTA_TEXT}
+        </a>
       </div>
     </section>
   );
