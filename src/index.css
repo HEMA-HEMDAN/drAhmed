@@ -11,6 +11,9 @@
   --color-dark: #000;
   --color-light: #fff;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: var(--font-heebo);
