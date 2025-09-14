@@ -7,6 +7,8 @@ import {
   FaXTwitter,
   FaLinkedinIn,
   FaYoutube,
+  FaT,
+  FaTiktok,
 } from "react-icons/fa6";
 // i have put all the text here because when transilate to arabic the text goes nuts so at the end we are gona change all the text to arabic
 export const Gallerypics = [
@@ -94,17 +96,15 @@ export const CONTACT_METHODS = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero.",
     href: "tel:+15550000000",
-    linkText: "+1 (555) 000-0000",
+    linkText: "+20 1550043269",
     Icon: FiPhone,
     aria: "Call phone number",
   },
 ];
 export const SOCIAL_LINKS = [
-  { label: "Facebook", href: "#", Icon: FaFacebookF },
-  { label: "Instagram", href: "#", Icon: FaInstagram },
-  { label: "X", href: "#", Icon: FaXTwitter },
-  { label: "LinkedIn", href: "#", Icon: FaLinkedinIn },
-  { label: "YouTube", href: "#", Icon: FaYoutube },
+  { label: "Instagram", href: "https://www.instagram.com/dr_ahmed_gad_coaching?igsh=MWxjbXp4YTd2enlrcQ%3D%3D&utm_source=qr", Icon: FaInstagram },
+  { label: "TikTok", href: "https://www.tiktok.com/@dr.ahmedgad.coaching?_t=ZS-8zhq3XGLf5s&_r=1", Icon: FaTiktok },
+  { label: "YouTube", href: "https://www.youtube.com/@ahmedgad118", Icon: FaYoutube },
 ];
 export const links = [
   {
