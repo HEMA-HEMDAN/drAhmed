@@ -2,12 +2,8 @@ import { MdOutlineEmail } from "react-icons/md";
 import { BsChatDots } from "react-icons/bs";
 import { FiPhone } from "react-icons/fi";
 import {
-  FaFacebookF,
   FaInstagram,
-  FaXTwitter,
-  FaLinkedinIn,
   FaYoutube,
-  FaT,
   FaTiktok,
 } from "react-icons/fa6";
 // i have put all the text here because when transilate to arabic the text goes nuts so at the end we are gona change all the text to arabic
@@ -43,6 +39,7 @@ export const Gallerypics = [
     title: "Workout",
   },
 ];
+const msg= "يلا بينا نتمرن"
 export const NAV_LINKS = [
   { label: "Home", href: "#" },
   { label: "About", href: "#trainer" },
@@ -77,8 +74,8 @@ export const CONTACT_METHODS = [
     title: "EMAIL",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero.",
-    href: "mailto:trainer@fitwithahmed.com",
-    linkText: "trainer@fitwithahmed.com",
+    href: "mailto:Momoahmed722003@gmail.com",
+    linkText: "Momoahmed722003@gmail.com",
     Icon: MdOutlineEmail,
     aria: "Send email",
   },
@@ -87,7 +84,7 @@ export const CONTACT_METHODS = [
     title: "LIVE CHAT",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero.",
-    href: "#start-chat",
+    href: `https://wa.me/${+201550043269}?text=${msg}ّّ`,
     linkText: "Start new chat",
     Icon: BsChatDots,
     aria: "Start live chat",
