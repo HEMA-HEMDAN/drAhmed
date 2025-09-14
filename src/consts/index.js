@@ -48,6 +48,8 @@ export const NAV_LINKS = [
   { label: "About", href: "#trainer" },
   { label: "Workouts", href: "#workouts" },
   { label: "Contact", href: "#contact" },
+  { label: "Programs", href: "#programs" },
+  { label: "Testimonials", href: "#testimonials" },
 ];
 export const HEADLINE = `Transform Your Body.
 Unlock Your Potential.`;
@@ -140,3 +142,30 @@ export const PROGRAMS_SECTION = {
     },
   ],
 };
+
+export const TESTIMONIALS_DATA = [
+  {
+    id: 1,
+    quote:
+      "I NEVER THOUGHT I COULD ACHIEVE MY FITNESS GOALS UNTIL I STARTED TRAINING WITH AHMED. HIS PERSONALISED APPROACH AND CONSTANT MOTIVATION MADE ALL THE DIFFERENCE IN MY JOURNEY.",
+    author: "Hema Hemdan",
+    role: "Client, Fitness Enthusiast",
+    initial: "H",
+  },
+  {
+    id: 2,
+    quote:
+      "AHMED'S EXPERTISE AND DEDICATION HELPED ME TRANSFORM MY BODY COMPLETELY. THE RESULTS SPEAK FOR THEMSELVES - I'VE NEVER FELT STRONGER OR MORE CONFIDENT.",
+    author: "Sarah Johnson",
+    role: "Client, Weight Loss Success",
+    initial: "S",
+  },
+  {
+    id: 3,
+    quote:
+      "TRAINING WITH AHMED WAS A GAME-CHANGER. HIS PERSONALIZED PROGRAMS AND UNWAVERING SUPPORT MADE MY FITNESS JOURNEY NOT JUST SUCCESSFUL, BUT ENJOYABLE.",
+    author: "Mike Chen",
+    role: "Client, Muscle Building",
+    initial: "M",
+  },
+];

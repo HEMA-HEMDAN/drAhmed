@@ -38,15 +38,20 @@ const App = () => {
       >
         <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-opacity-50" />
       </div>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <WhatsAppButton />
-        <Footer />
-      </BrowserRouter>
+      <div
+        className=" bg-gradient-to-r from-[#fdfbfb] via-[#ebedee] to-[#dfe9f3]
+  dark:bg-gradient-to-br dark:from-[#0a0a0f] dark:via-[#0f0f17] dark:to-[#000000]"
+      >
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <WhatsAppButton />
+          <Footer />
+        </BrowserRouter>
+      </div>
     </>
   );
 };

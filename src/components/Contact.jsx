@@ -4,10 +4,7 @@ import { CONTACT_METHODS } from "../consts/index.js";
 
 const Contact = () => {
   return (
-    <section
-      id="contact"
-      className="text-dark bg-light dark:text-light dark:bg-dark py-20"
-    >
+    <section id="contact" className="text-dark dark:text-light py-20">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid grid-cols-1  lg:grid-cols-3 gap-12  text-center">
           {CONTACT_METHODS.map(

@@ -8,6 +8,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const root = document.documentElement;
+    const body = document.body;
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia(
       "(prefers-color-scheme: dark)"
@@ -15,25 +16,29 @@ const Navbar = () => {
 
     if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
       root.classList.add("dark");
+      body.classList.add("bg-dark");
       setIsDark(true);
     } else {
       root.classList.remove("dark");
+      body.classList.remove("bg-dark");
       setIsDark(false);
     }
   }, []);
 
   const toggleTheme = () => {
     const root = document.documentElement;
+    const body = document.body;
     const newTheme = isDark ? "light" : "dark";
 
     root.classList.toggle("dark");
+    body.classList.toggle("bg-dark");
     localStorage.setItem("theme", newTheme);
     setIsDark(!isDark);
   };
 
   return (
-    <nav className="fixed top-0 right-0 left-0 px-4 py-2 flex flex-row items-center z-40 bg-gradient-to-r from-black via-[#333333] to-[#666666] shadow-lg justify-between grid-col-3  ">
-      {/* Logo */}
+    <nav className="fixed top-0 right-0 left-0 px-4 py-2 flex flex-row items-center z-40 bg-gradient-to-r from-black via-[#333333] to-[#666666] shadow-lg">
+      {/* Logo - Left */}
       <Link to="/" className="text-2xl flex flex-row items-center">
         <img
           src="/assets/logo-dark.png"
@@ -42,9 +47,9 @@ const Navbar = () => {
         />
       </Link>
 
-      {/* Desktop Navigation */}
-      <div className="hidden lg:flex flex-center justify-between w-[60vw]">
-        <ul className="flex flex-row items-center gap-8 ">
+      {/* Desktop Navigation - Centered */}
+      <div className="hidden lg:flex flex-1 justify-center">
+        <ul className="flex flex-row items-center gap-8">
           {NAV_LINKS.map(({ label, href }) => (
             <li key={href}>
               <a
@@ -60,6 +65,10 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+      </div>
+
+      {/* Theme Toggle - Right */}
+      <div className="hidden lg:flex">
         <button
           onClick={toggleTheme}
           className="text-white text-2xl md:text-3xl"
@@ -70,7 +79,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className="lg:hidden">
+      <div className="lg:hidden flex flex-1 justify-end">
         {/* Toggle button stays ABOVE menu */}
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -94,7 +103,7 @@ const Navbar = () => {
             }
           `}
         >
-          <ul className="flex flex-col gap-6 mt-12 w-full text-start">
+          <ul className="flex flex-col gap-6 mt-12 w-full text-end">
             {NAV_LINKS.map(({ label, href }) => (
               <li key={href}>
                 <a
