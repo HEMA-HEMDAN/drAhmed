@@ -95,7 +95,7 @@ export const CONTACT_METHODS = [
     title: "PHONE",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero.",
-    href: "tel:+15550000000",
+    href: "tel:+201550043269",
     linkText: "+20 1550043269",
     Icon: FiPhone,
     aria: "Call phone number",
