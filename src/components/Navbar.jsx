@@ -1,73 +1,120 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import Switch from './Switch';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { NAV_LINKS } from "../consts/index.js";
 
 const Navbar = () => {
   const [isDark, setIsDark] = useState(false);
-  const navRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
 
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-      root.classList.add('dark');
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+      root.classList.add("dark");
       setIsDark(true);
     } else {
-      root.classList.remove('dark');
+      root.classList.remove("dark");
       setIsDark(false);
     }
   }, []);
 
   const toggleTheme = () => {
     const root = document.documentElement;
-    const newTheme = isDark ? 'light' : 'dark';
+    const newTheme = isDark ? "light" : "dark";
 
-    root.classList.toggle('dark');
-    localStorage.setItem('theme', newTheme);
+    root.classList.toggle("dark");
+    localStorage.setItem("theme", newTheme);
     setIsDark(!isDark);
   };
 
-  useGSAP(() => {
-    if (navRef.current) {
-      gsap.fromTo(
-        navRef.current,
-        { opacity: 0, y: -50, delay: 2 },
-        { opacity: 1, y: 0, duration: 2, ease: 'power1.inOut' }
-      );
-    }
-  }, []);
-
   return (
-    <nav
-      ref={navRef}
-      className="fixed top-0 left-0 right-0 m-4 px-4 py-2 rounded-xl flex justify-between items-center z-40
-                 bg-gradient-to-b 
-    from-[#0F818C] 
-    via-[#095259] 
-    via-64% 
-    to-[#042326]"
-    >
+    <nav className="fixed top-0 right-0 left-0 px-4 py-2 flex flex-row items-center z-40 bg-gradient-to-r from-black via-[#333333] to-[#666666] shadow-lg justify-between grid-col-3  ">
       {/* Logo */}
-      <Link to="/" className="text-white text-2xl flex flex-row items-center">
-        <img src='/home/face.png' className='w-10 md:w-16 object-contain' alt="logo" />
-        <div className='w-[2px] md:w-1 md:h-12 h-8 bg-white'></div>
-        <div className='text-center ml-2 text-white text-[10px] md:text-sm font-bold'>
-          <p>over dose</p>
-          <p>math</p>
-        </div>
+      <Link to="/" className="text-2xl flex flex-row items-center">
+        <img
+          src="/assets/logo-dark.png"
+          className="w-16 object-contain"
+          alt="logo"
+        />
       </Link>
 
-      {/* Theme switch */}
-      <div className='flex items-center gap-4'>
-        <Switch isDark={isDark} toggleTheme={toggleTheme} />
+      {/* Desktop Navigation */}
+      <div className="hidden lg:flex flex-center justify-between w-[60vw]">
+        <ul className="flex flex-row items-center gap-8 ">
+          {NAV_LINKS.map(({ label, href }) => (
+            <li key={href}>
+              <a
+                href={href}
+                className="relative text-light text-lg font-bold 
+             after:absolute after:left-0 after:-bottom-1 
+             after:h-[2px] after:w-0 after:bg-white 
+             after:transition-all after:duration-500 after:ease-in-out 
+             hover:after:w-full"
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <button
+          onClick={toggleTheme}
+          className="text-white text-2xl md:text-3xl"
+          aria-label="Toggle theme"
+        >
+          {isDark ? "☀️" : "🌜"}
+        </button>
+      </div>
 
-        <p className='text-white text-sm md:text-lg font-bold'>
-          {isDark ? 'dark' : 'light'}
-        </p>
+      {/* Mobile Navigation */}
+      <div className="lg:hidden">
+        {/* Toggle button stays ABOVE menu */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="text-white text-2xl md:text-3xl relative z-50"
+          aria-label="Toggle navigation"
+        >
+          {isOpen ? "✕" : "☰"}
+        </button>
+
+        {/* Slide-in menu */}
+        <div
+          className={`
+            fixed top-0 right-0 bottom-0 min-w-40 p-6
+            bg-black/60 backdrop-blur-md shadow-lg text-white
+            transform transition-all duration-300 ease-in-out
+            z-40
+            ${
+              isOpen
+                ? "translate-x-0 opacity-100"
+                : "translate-x-full opacity-0"
+            }
+          `}
+        >
+          <ul className="flex flex-col gap-6 mt-12 w-full text-start">
+            {NAV_LINKS.map(({ label, href }) => (
+              <li key={href}>
+                <a
+                  href={href}
+                  className=" text-lg font-bold hover:underline   "
+                  onClick={() => setIsOpen(false)}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+            <button
+              onClick={toggleTheme}
+              className="text-2xl md:text-3xl mt-6 "
+              aria-label="Toggle theme"
+            >
+              {isDark ? "☀️" : "🌜"}
+            </button>
+          </ul>
+        </div>
       </div>
     </nav>
   );
