@@ -1,13 +1,15 @@
 import React from "react";
-
-import { CONTACT_METHODS } from "../consts/index.js";
+import { useLanguage } from "../contexts/LanguageContext";
+import { TEXTS } from "../consts/index.js";
 
 const Contact = () => {
+  const { language } = useLanguage();
+  const texts = TEXTS[language];
   return (
     <section id="contact" className="text-dark dark:text-light py-20">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid grid-cols-1  lg:grid-cols-3 gap-12  text-center">
-          {CONTACT_METHODS.map(
+          {texts.contactMethods.map(
             ({ key, title, description, href, linkText, Icon, aria }) => (
               <div key={key}>
                 <div className="mx-auto mb-4 w-12 h-12 flex items-center justify-center ">

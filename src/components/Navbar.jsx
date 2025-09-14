@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { NAV_LINKS } from "../consts/index.js";
+import { useLanguage } from "../contexts/LanguageContext";
+import { TEXTS } from "../consts/index.js";
 
 const Navbar = () => {
   const [isDark, setIsDark] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
+  const texts = TEXTS[language];
 
   useEffect(() => {
     const root = document.documentElement;
@@ -50,7 +53,7 @@ const Navbar = () => {
       {/* Desktop Navigation - Centered */}
       <div className="hidden lg:flex flex-1 justify-center">
         <ul className="flex flex-row items-center gap-8">
-          {NAV_LINKS.map(({ label, href }) => (
+          {texts.navLinks.map(({ label, href }) => (
             <li key={href}>
               <a
                 href={href}
@@ -67,8 +70,15 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {/* Theme Toggle - Right */}
-      <div className="hidden lg:flex">
+      {/* Theme Toggle and Language Toggle - Right */}
+      <div className="hidden lg:flex items-center gap-4">
+        <button
+          onClick={toggleLanguage}
+          className="text-white text-lg font-bold px-3 py-1 rounded border border-white/30 hover:bg-white/10 transition-colors"
+          aria-label="Toggle language"
+        >
+          {language === 'en' ? 'العربية' : 'English'}
+        </button>
         <button
           onClick={toggleTheme}
           className="text-white text-2xl md:text-3xl"
@@ -104,7 +114,7 @@ const Navbar = () => {
           `}
         >
           <ul className="flex flex-col gap-6 mt-12 w-full text-end">
-            {NAV_LINKS.map(({ label, href }) => (
+            {texts.navLinks.map(({ label, href }) => (
               <li key={href}>
                 <a
                   href={href}
@@ -115,13 +125,22 @@ const Navbar = () => {
                 </a>
               </li>
             ))}
-            <button
-              onClick={toggleTheme}
-              className="text-2xl md:text-3xl mt-6 "
-              aria-label="Toggle theme"
-            >
-              {isDark ? "☀️" : "🌜"}
-            </button>
+            <div className="flex flex-col gap-4 mt-6">
+              <button
+                onClick={toggleLanguage}
+                className="text-lg font-bold px-3 py-1 rounded border border-white/30 hover:bg-white/10 transition-colors"
+                aria-label="Toggle language"
+              >
+                {language === 'en' ? 'العربية' : 'English'}
+              </button>
+              <button
+                onClick={toggleTheme}
+                className="text-2xl md:text-3xl "
+                aria-label="Toggle theme"
+              >
+                {isDark ? "☀️" : "🌜"}
+              </button>
+            </div>
           </ul>
         </div>
       </div>

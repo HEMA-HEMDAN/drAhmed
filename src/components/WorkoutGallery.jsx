@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Gallerypics } from "../consts/index.js";
-import {
-  SUBHEADING,
-  CLOSE_BUTTON,
-  ALT_TEXT,
-  MODAL_ALT_TEXT,
-  HEADING,
-} from "../consts/index.js";
+import { useLanguage } from "../contexts/LanguageContext";
+import { TEXTS } from "../consts/index.js";
 const WorkoutGallery = () => {
+  const { language } = useLanguage();
+  const texts = TEXTS[language];
   const [selectedImg, setSelectedImg] = useState(null);
 
   // Close modal with ESC key
@@ -32,16 +28,16 @@ const WorkoutGallery = () => {
       {/* Heading */}
       <div className="text-center mb-10">
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-wide font-hahmlet text-dark dark:text-light">
-          {HEADING}
+          {texts.heading}
         </h1>
         <p className="text-base sm:text-lg md:text-xl mt-2 font-heebo text-dark/70 dark:text-light/70">
-          {SUBHEADING}
+          {texts.subheading}
         </p>
       </div>
 
       {/* Responsive Grid */}
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 px-2 sm:px-6 md:px-12">
-        {Gallerypics.map((pic) => (
+        {texts.galleryPics.map((pic) => (
           <div
             key={pic.id}
             className="aspect-square w-full overflow-hidden rounded-xl shadow-lg transform transition duration-300 hover:scale-105 cursor-pointer"
@@ -49,7 +45,7 @@ const WorkoutGallery = () => {
           >
             <img
               src={pic.img}
-              alt={pic.title || ALT_TEXT}
+              alt={pic.title || texts.altText}
               className="w-full h-full object-cover"
               loading="lazy"
             />
@@ -69,7 +65,7 @@ const WorkoutGallery = () => {
           >
             <img
               src={selectedImg}
-              alt={MODAL_ALT_TEXT}
+              alt={texts.modalAltText}
               className="rounded-lg shadow-2xl max-h-[80vh] object-contain"
             />
             {/* Close button */}
@@ -77,7 +73,7 @@ const WorkoutGallery = () => {
               onClick={() => setSelectedImg(null)}
               className="absolute top-2 right-2 text-white text-3xl font-bold bg-black/50 rounded-full px-2 hover:bg-black/70 transition"
             >
-              {CLOSE_BUTTON}
+              {texts.closeButton}
             </button>
           </div>
         </div>

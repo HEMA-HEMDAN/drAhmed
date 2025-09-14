@@ -1,7 +1,10 @@
 import React from "react";
-import { PROGRAMS_SECTION } from "../consts/index.js";
+import { useLanguage } from "../contexts/LanguageContext";
+import { TEXTS } from "../consts/index.js";
 
 const Programs = () => {
+  const { language } = useLanguage();
+  const texts = TEXTS[language];
   return (
     <section
       id="programs"
@@ -18,11 +21,11 @@ const Programs = () => {
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12">
-          {PROGRAMS_SECTION.heading}
+          {texts.programsSection.heading}
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {PROGRAMS_SECTION.items.map((item, index) => (
+          {texts.programsSection.items.map((item, index) => (
             <div
               key={index}
               className="bg-black/40 p-6 rounded-xl shadow-lg flex flex-col items-center text-center transition-transform duration-300 hover:scale-105"

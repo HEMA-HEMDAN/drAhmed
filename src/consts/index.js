@@ -1,11 +1,7 @@
 import { MdOutlineEmail } from "react-icons/md";
 import { BsChatDots } from "react-icons/bs";
 import { FiPhone } from "react-icons/fi";
-import {
-  FaInstagram,
-  FaYoutube,
-  FaTiktok,
-} from "react-icons/fa6";
+import { FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa6";
 // i have put all the text here because when transilate to arabic the text goes nuts so at the end we are gona change all the text to arabic
 export const Gallerypics = [
   {
@@ -39,7 +35,7 @@ export const Gallerypics = [
     title: "Workout",
   },
 ];
-const msg= "يلا بينا نتمرن"
+const msg = "يلا بينا نتمرن";
 export const NAV_LINKS = [
   { label: "Home", href: "#" },
   { label: "About", href: "#trainer" },
@@ -84,7 +80,7 @@ export const CONTACT_METHODS = [
     title: "LIVE CHAT",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero.",
-    href: `https://wa.me/${+201550043269}?text=${msg}ّّ`,
+    href: `https://wa.me/${+201550043269}?text=${msg}`,
     linkText: "Start new chat",
     Icon: BsChatDots,
     aria: "Start live chat",
@@ -101,9 +97,21 @@ export const CONTACT_METHODS = [
   },
 ];
 export const SOCIAL_LINKS = [
-  { label: "Instagram", href: "https://www.instagram.com/dr_ahmed_gad_coaching?igsh=MWxjbXp4YTd2enlrcQ%3D%3D&utm_source=qr", Icon: FaInstagram },
-  { label: "TikTok", href: "https://www.tiktok.com/@dr.ahmedgad.coaching?_t=ZS-8zhq3XGLf5s&_r=1", Icon: FaTiktok },
-  { label: "YouTube", href: "https://www.youtube.com/@ahmedgad118", Icon: FaYoutube },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/dr_ahmed_gad_coaching?igsh=MWxjbXp4YTd2enlrcQ%3D%3D&utm_source=qr",
+    Icon: FaInstagram,
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@dr.ahmedgad.coaching?_t=ZS-8zhq3XGLf5s&_r=1",
+    Icon: FaTiktok,
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@ahmedgad118",
+    Icon: FaYoutube,
+  },
 ];
 export const links = [
   {
@@ -166,3 +174,155 @@ export const TESTIMONIALS_DATA = [
     initial: "M",
   },
 ];
+
+const ARABIC_NAV_LINKS = [
+  { label: "الرئيسية", href: "#" },
+  { label: "حول المدرب", href: "#trainer" },
+  { label: "التمارين", href: "#workouts" },
+  { label: "اتصل بنا", href: "#contact" },
+  { label: "البرامج", href: "#programs" },
+  { label: "الشهادات", href: "#testimonials" },
+];
+
+const ARABIC_HEADLINE = `حول جسدك.
+أطلق إمكاناتك.`;
+
+const ARABIC_SUBTITLE = `اختبر برامج التدريب الشخصية التي تمكنك من بناء
+القوة، وفقدان الوزن، والحفاظ على الدافعية. دعنا نبدأ هذه
+رحلة اللياقة البدنية معاً!`;
+
+const ARABIC_CTA_TEXT = "ابدأ التدريب اليوم";
+const ARABIC_TITLE = "تعرف على مدربك";
+const ARABIC_DESCRIPTION =
+  "أنا أحمد، مدرب شخصي معتمد مع أكثر من سبع سنوات من الخبرة. مهمتي هي تمكينك من خلال التمارين الفعالة والإرشاد الغذائي والدافعية الثابتة.";
+const ARABIC_BUTTON_TEXT = "شاهد تماريننا";
+const ARABIC_IMAGE_ALT = "أحمد، مدرب شخصي";
+const ARABIC_HEADING = "معرض التمارين";
+const ARABIC_SUBHEADING = "استكشف التفاني والنتائج لعملائنا.";
+const ARABIC_ALT_TEXT = "صورة تمرين";
+const ARABIC_MODAL_ALT_TEXT = "التمرين المحدد";
+
+const ARABIC_CONTACT_METHODS = [
+  {
+    key: "email",
+    title: "البريد الإلكتروني",
+    description: "تواصل معنا عبر البريد الإلكتروني للحصول على استشارة مجانية.",
+    href: "mailto:Momoahmed722003@gmail.com",
+    linkText: "Momoahmed722003@gmail.com",
+    Icon: MdOutlineEmail,
+    aria: "إرسال بريد إلكتروني",
+  },
+  {
+    key: "chat",
+    title: "الدردشة المباشرة",
+    description: "ابدأ محادثة مباشرة معنا للحصول على إجابات فورية لأسئلتك.",
+    href: `https://wa.me/${+201550043269}?text=${msg}`,
+    linkText: "ابدأ محادثة جديدة",
+    Icon: BsChatDots,
+    aria: "بدء دردشة مباشرة",
+  },
+  {
+    key: "phone",
+    title: "الهاتف",
+    description: "اتصل بنا مباشرة للحصول على استشارة شخصية.",
+    href: "tel:+201550043269",
+    linkText: "+20 1550043269",
+    Icon: FiPhone,
+    aria: "اتصال برقم الهاتف",
+  },
+];
+const ARABIC_PROGRAMS_SECTION = {
+  heading: "برامج مصممة خصيصاً لك",
+  items: [
+    {
+      icon: "⚡",
+      title: "اكتشف خطة التدريب المثالية التي تناسب نمط حياتك.",
+      description:
+        "برامجنا المتنوعة تلبي جميع مستويات اللياقة البدنية والأهداف.",
+    },
+    {
+      icon: "🏃",
+      title: "تدريب فقدان الوزن – احرق الدهون وعزز الطاقة بخطط مخصصة.",
+      description:
+        "احقق أهداف فقدان الوزن مع التمارين المخصصة والنصائح الغذائية.",
+    },
+    {
+      icon: "🧩",
+      title: "بناء العضلات – تدريب قوة منظم للعضلات النحيفة.",
+      description: "ابن القوة والحجم مع برامج بناء العضلات بقيادة خبراء.",
+    },
+  ],
+};
+
+const ARABIC_TESTIMONIALS_DATA = [
+  {
+    id: 1,
+    quote:
+      "لم أكن أعتقد أنني أستطيع تحقيق أهدافي في اللياقة البدنية حتى بدأت التدريب مع أحمد. نهجه الشخصي ودافعيته المستمرة أحدثا فرقاً كبيراً في رحلتي.",
+    author: "هيما حمدان",
+    role: "عميل، محب للرياضة",
+    initial: "ه",
+  },
+  {
+    id: 2,
+    quote:
+      "خبرة أحمد وتفانيه ساعداني على تحويل جسدي بالكامل. النتائج تتحدث عن نفسها - لم أشعر قط بقوة وثقة أكبر.",
+    author: "سارة جونسون",
+    role: "عميل، نجح في فقدان الوزن",
+    initial: "س",
+  },
+  {
+    id: 3,
+    quote:
+      "التدريب مع أحمد كان نقطة تحول. برامجه الشخصية ودعمه الثابت جعلا رحلتي في اللياقة البدنية ناجحة وممتعة.",
+    author: "مايك تشين",
+    role: "عميل، بناء العضلات",
+    initial: "م",
+  },
+];
+
+// Language Text Objects - References existing constants
+export const TEXTS = {
+  en: {
+    galleryPics: Gallerypics,
+    navLinks: NAV_LINKS,
+    headline: HEADLINE,
+    subtitle: SUBTITLE,
+    ctaText: CTA_TEXT,
+    title: TITLE,
+    description: DESCRIPTION,
+    buttonText: BUTTON_TEXT,
+    imageAlt: IMAGE_ALT,
+    heading: HEADING,
+    subheading: SUBHEADING,
+    closeButton: CLOSE_BUTTON,
+    altText: ALT_TEXT,
+    modalAltText: MODAL_ALT_TEXT,
+    contactMethods: CONTACT_METHODS,
+    socialLinks: SOCIAL_LINKS,
+    links: links,
+    programsSection: PROGRAMS_SECTION,
+    testimonialsData: TESTIMONIALS_DATA,
+  },
+  ar: {
+    galleryPics: Gallerypics,
+    navLinks: ARABIC_NAV_LINKS,
+    headline: ARABIC_HEADLINE,
+    subtitle: ARABIC_SUBTITLE,
+    ctaText: ARABIC_CTA_TEXT,
+    title: ARABIC_TITLE,
+    description: ARABIC_DESCRIPTION,
+    buttonText: ARABIC_BUTTON_TEXT,
+    imageAlt: ARABIC_IMAGE_ALT,
+    heading: ARABIC_HEADING,
+    subheading: ARABIC_SUBHEADING,
+    closeButton: CLOSE_BUTTON,
+    altText: ARABIC_ALT_TEXT,
+    modalAltText: ARABIC_MODAL_ALT_TEXT,
+    contactMethods: ARABIC_CONTACT_METHODS,
+    socialLinks: SOCIAL_LINKS,
+    links: links,
+    programsSection: ARABIC_PROGRAMS_SECTION,
+    testimonialsData: ARABIC_TESTIMONIALS_DATA,
+  },
+};

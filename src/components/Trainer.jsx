@@ -1,12 +1,9 @@
 import React from "react";
-import {
-  TITLE,
-  DESCRIPTION,
-  BUTTON_TEXT,
-  IMAGE_ALT,
-  IMAGE_SRC,
-} from "../consts/index.js";
+import { useLanguage } from "../contexts/LanguageContext";
+import { TEXTS, IMAGE_SRC } from "../consts/index.js";
 const TrainerProfile = () => {
+  const { language } = useLanguage();
+  const texts = TEXTS[language];
   const handleScroll = () => {
     const element = document.getElementById("workouts");
     if (element) {
@@ -27,7 +24,7 @@ const TrainerProfile = () => {
             text-3xl sm:text-4xl md:text-5xl lg:text-6xl
           "
         >
-          {TITLE}
+          {texts.title}
         </h2>
         <p
           className="
@@ -35,7 +32,7 @@ const TrainerProfile = () => {
             leading-relaxed mb-8
           "
         >
-          {DESCRIPTION}
+          {texts.description}
         </p>
         <button
           className="
@@ -58,7 +55,7 @@ const TrainerProfile = () => {
             "
           onClick={handleScroll}
         >
-          {BUTTON_TEXT}
+          {texts.buttonText}
         </button>
       </div>
 
@@ -66,7 +63,7 @@ const TrainerProfile = () => {
       <div className="relative overflow-hidden rounded-xl shadow-2xl m-4 lg:w-1/3">
         <img
           src={IMAGE_SRC}
-          alt={IMAGE_ALT}
+          alt={texts.imageAlt}
           className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
         />
       </div>

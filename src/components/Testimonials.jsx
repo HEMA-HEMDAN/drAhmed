@@ -1,13 +1,16 @@
 import { useState, useRef } from "react";
-import { TESTIMONIALS_DATA } from "../consts";
+import { useLanguage } from "../contexts/LanguageContext";
+import { TEXTS } from "../consts";
 
 const Testimonials = () => {
+  const { language } = useLanguage();
+  const texts = TEXTS[language];
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const scrollContainerRef = useRef(null);
 
   const nextTestimonial = () => {
     const newIndex =
-      currentTestimonial === TESTIMONIALS_DATA.length - 1
+      currentTestimonial === texts.testimonialsData.length - 1
         ? 0
         : currentTestimonial + 1;
     setCurrentTestimonial(newIndex);
@@ -25,7 +28,7 @@ const Testimonials = () => {
   const prevTestimonial = () => {
     const newIndex =
       currentTestimonial === 0
-        ? TESTIMONIALS_DATA.length - 1
+        ? texts.testimonialsData.length - 1
         : currentTestimonial - 1;
     setCurrentTestimonial(newIndex);
 
@@ -43,7 +46,7 @@ const Testimonials = () => {
     setCurrentTestimonial(index);
   };
 
-  const currentData = TESTIMONIALS_DATA[currentTestimonial];
+  const currentData = texts.testimonialsData[currentTestimonial];
 
   return (
     <section
@@ -127,9 +130,9 @@ const Testimonials = () => {
           >
             <div
               className="flex space-x-4 px-4 py-8 items-center justify-center"
-              style={{ width: `${TESTIMONIALS_DATA.length * 100}vw` }}
+              style={{ width: `${texts.testimonialsData.length * 100}vw` }}
             >
-              {TESTIMONIALS_DATA.map((testimonial) => (
+              {texts.testimonialsData.map((testimonial) => (
                 <div
                   key={testimonial.id}
                   className="flex-shrink-0 w-screen snap-center text-center px-6 py-8 items-center justify-center"
@@ -237,7 +240,7 @@ const Testimonials = () => {
 
         {/* Pagination Dots - Hidden on mobile */}
         <div className="hidden md:flex justify-center space-x-2 mt-8">
-          {TESTIMONIALS_DATA.map((_, index) => (
+          {texts.testimonialsData.map((_, index) => (
             <button
               key={index}
               onClick={() => goToTestimonial(index)}

@@ -1,7 +1,11 @@
 import React from "react";
-import { CTA_TEXT, HEADLINE, SUBTITLE } from "../consts/index.js";
+import { useLanguage } from "../contexts/LanguageContext";
+import { TEXTS } from "../consts/index.js";
 
 const FitnessApp = () => {
+  const { language } = useLanguage();
+  const texts = TEXTS[language];
+
   return (
     <section
       className="relative min-h-[95vh] md:min-h-[90vh] w-full flex items-center justify-center mt-12 md:mt-20"
@@ -28,7 +32,7 @@ const FitnessApp = () => {
             mb-6
           "
         >
-          {HEADLINE.split("\n").map((line, i) => (
+          {texts.headline.split("\n").map((line, i) => (
             <span key={i}>
               {line}
               <br className={i === 0 ? "hidden sm:block" : "hidden"} />
@@ -45,7 +49,7 @@ const FitnessApp = () => {
             mb-10
           "
         >
-          {SUBTITLE}
+          {texts.subtitle}
         </p>
 
         {/* CTA Button */}
@@ -70,7 +74,7 @@ const FitnessApp = () => {
               text-sm sm:text-base md:text-lg
             "
         >
-          {CTA_TEXT}
+          {texts.ctaText}
         </a>
       </div>
     </section>
