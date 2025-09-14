@@ -10,6 +10,8 @@
   --font-hahmlet: "Hahmlet", sans-serif;
   --color-dark: #000;
   --color-light: #fff;
+  --color-border:#e6fdf0;
+  --bg-greenGradient:linear-gradient(to right,  #3EC16380, #3EC163,#3EC16380);
 }
 
 body {
