@@ -11,7 +11,10 @@ const Contact = () => {
         <div className="grid grid-cols-1  lg:grid-cols-3 gap-12  text-center">
           {texts.contactMethods.map(
             ({ key, title, description, href, linkText, Icon, aria }) => (
-              <div key={key}>
+              <div
+                key={key}
+                className="flex flex-col items-center justify-between"
+              >
                 <div className="mx-auto mb-4 w-12 h-12 flex items-center justify-center ">
                   <Icon className="text-4xl" />
                 </div>
@@ -24,7 +27,7 @@ const Contact = () => {
                 <a
                   href={href}
                   aria-label={aria}
-                  className="underline underline-offset-4 hover:text-neutral-200"
+                  className="underline underline-offset-4 hover:text-primary dark:hover:text-primary transition-all duration-300 ease-in-out"
                 >
                   {linkText}
                 </a>
