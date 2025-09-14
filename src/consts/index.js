@@ -281,6 +281,132 @@ const ARABIC_TESTIMONIALS_DATA = [
   },
 ];
 
+// Pricing Data
+export const BILLING_OPTIONS = [
+  { key: "1month", labelEn: "1 Month", labelAr: "شهر واحد" },
+  { key: "3months", labelEn: "3 Months", labelAr: "3 أشهر" },
+  { key: "6months", labelEn: "6 Months", labelAr: "6 أشهر" },
+  { key: "1year", labelEn: "1 Year", labelAr: "سنة واحدة" },
+];
+
+export const PLAN_OPTIONS = [
+  { key: "economy", labelEn: "Economy", labelAr: "اقتصادية" },
+  { key: "premium", labelEn: "Premium", labelAr: "مميزة" },
+  { key: "elite", labelEn: "Elite", labelAr: "نخبوية" },
+];
+
+export const PRICING_PLANS = {
+  economy: {
+    nameEn: "WEEKLY FOLLOW-UP",
+    nameAr: "المتابعة الأسبوعية",
+    subtitleEn: "Economy Plan - Inside Egypt Only",
+    subtitleAr: "الخطة الاقتصادية - داخل مصر فقط",
+    prices: {
+      "1month": { price: "800", currency: "EGP", period: "/mo", originalPrice: "1600" },
+      "3months": { price: "999", currency: "EGP", period: "/3mo", originalPrice: "2000", bonusEn: "1 month free", bonusAr: "+1 شهر مجاناً" },
+      "6months": { price: "1999", currency: "EGP", period: "/6mo", originalPrice: "4000", bonusEn: "1 month free", bonusAr: "+1 شهر مجاناً" },
+      "1year": { price: "3999", currency: "EGP", period: "/12mo", originalPrice: "8000", bonusEn: "Best package", bonusAr: "أفضل باقة" },
+    },
+    featuresEn: [
+      "Custom nutrition plan for your goal",
+      "Workout program with video explanations",
+      "Diet changes every 10 days",
+      "Weekly performance review",
+      "Communication once per week",
+    ],
+    featuresAr: [
+      "نظام غذائي مخصص لهدفك",
+      "برنامج تدريبي مشروح صوت وصورة",
+      "تغيير الدايت كل 10 أيام",
+      "مراجعة أسبوعية للأداء",
+      "التواصل والرد مرة أسبوعياً",
+    ],
+    buttonTextEn: "Get started",
+    buttonTextAr: "ابدأ الآن",
+  },
+  premium: {
+    nameEn: "DAILY FOLLOW-UP",
+    nameAr: "المتابعة اليومية",
+    subtitleEn: "Premium Plan - Inside & Outside Egypt",
+    subtitleAr: "الخطة المميزة - داخل وخارج مصر",
+    prices: {
+      "1month": { price: "1000", currency: "EGP", period: "/mo", originalPrice: "2000" },
+      "3months": { price: "1499", currency: "EGP", period: "/3mo", originalPrice: "3000", bonusEn: "1 month free", bonusAr: "+1 شهر مجاناً" },
+      "6months": { price: "2499", currency: "EGP", period: "/6mo", originalPrice: "5000", bonusEn: "1 month free", bonusAr: "+1 شهر مجاناً" },
+      "1year": { price: "3999", currency: "EGP", period: "/12mo", originalPrice: "8000", bonusEn: "Best package", bonusAr: "أفضل باقة" },
+    },
+    featuresEn: [
+      "24/7 follow-up with 24-hour response",
+      "Custom nutrition plan for all goals",
+      "Mental health support & motivation",
+      "Video workout program with explanations",
+      "Personal training videos by Ahmed",
+      "Video form check for all exercises",
+      "Diet changes every 10 days",
+      "Weekly video/audio calls",
+    ],
+    featuresAr: [
+      "متابعة طول الوقت + الرد خلال 24 ساعة",
+      "نظام غذائي مخصص لهدفك (خسارة دهون، زيادة عضلات، Recomp)",
+      "متابعة الحالة النفسية والتشجيع المستمر",
+      "برنامج تدريبي مشروح صوت وصورة",
+      "أنا اللي بتمرن بنفسي في الفيديوهات",
+      "متاح تصور نفسك لأي تمرين ومراجعة الأداء",
+      "تغيير الدايت كل 10 أيام",
+      "مكالمة فيديو أو صوتية أسبوعياً",
+    ],
+    buttonTextEn: "Get started",
+    buttonTextAr: "ابدأ الآن",
+  },
+  elite: {
+    nameEn: "ELITE PLAN",
+    nameAr: "الخطة النخبوية",
+    subtitleEn: "Elite Plan - Premium Features",
+    subtitleAr: "الخطة النخبوية - مميزات إضافية",
+    prices: {
+      "1month": { price: "1500", currency: "EGP", period: "/mo", originalPrice: "3000" },
+      "3months": { price: "1999", currency: "EGP", period: "/3mo", originalPrice: "4000", bonusEn: "1 month free", bonusAr: "+1 شهر مجاناً" },
+      "6months": { price: "2999", currency: "EGP", period: "/6mo", originalPrice: "6000", bonusEn: "1 month free", bonusAr: "+1 شهر مجاناً" },
+      "1year": { price: "4999", currency: "EGP", period: "/12mo", originalPrice: "10000", bonusEn: "Best package", bonusAr: "أفضل باقة" },
+    },
+    featuresEn: [
+      "Everything in Premium plan",
+      "1:1 personal coaching sessions",
+      "Custom meal plans with recipes",
+      "24/7 priority support",
+      "Advanced progress analytics",
+      "Equipment recommendations",
+      "Nutritional supplements guidance",
+      "Monthly body composition analysis",
+    ],
+    featuresAr: [
+      "كل ما في الخطة المميزة",
+      "جلسات تدريب فردية شخصية",
+      "خطط وجبات مخصصة مع الوصفات",
+      "دعم أولوية على مدار الساعة",
+      "تحليلات متقدمة للتقدم",
+      "توصيات المعدات الرياضية",
+      "إرشاد المكملات الغذائية",
+      "تحليل تكوين الجسم شهرياً",
+    ],
+    buttonTextEn: "Get started",
+    buttonTextAr: "ابدأ الآن",
+  },
+};
+
+export const PRICING_SECTION = {
+  titleEn: "Pricing plans",
+  titleAr: "خطط الأسعار",
+  headingEn: "INTRODUCE PRICING PLANS",
+  headingAr: "خطط الأسعار المقدمة",
+  subtitleEn: "Simple, transparent pricing that grows with you. Try any plan free for 30 days.",
+  subtitleAr: "أسعار بسيطة وشفافة تنمو معك. جرب أي خطة مجاناً لمدة 30 يوماً.",
+  orTextEn: "or",
+  orTextAr: "أو",
+  yearlyTextEn: "yearly",
+  yearlyTextAr: "سنوياً",
+};
+
 // Language Text Objects - References existing constants
 export const TEXTS = {
   en: {
@@ -303,6 +429,10 @@ export const TEXTS = {
     links: links,
     programsSection: PROGRAMS_SECTION,
     testimonialsData: TESTIMONIALS_DATA,
+    billingOptions: BILLING_OPTIONS,
+    planOptions: PLAN_OPTIONS,
+    pricingPlans: PRICING_PLANS,
+    pricingSection: PRICING_SECTION,
   },
   ar: {
     galleryPics: Gallerypics,
@@ -324,5 +454,9 @@ export const TEXTS = {
     links: links,
     programsSection: ARABIC_PROGRAMS_SECTION,
     testimonialsData: ARABIC_TESTIMONIALS_DATA,
+    billingOptions: BILLING_OPTIONS,
+    planOptions: PLAN_OPTIONS,
+    pricingPlans: PRICING_PLANS,
+    pricingSection: PRICING_SECTION,
   },
 };

@@ -1,0 +1,199 @@
+import React, { useState } from "react";
+import { useLanguage } from "../contexts/LanguageContext";
+import { TEXTS } from "../consts/index.js";
+
+const Pricing = () => {
+  const { language } = useLanguage();
+  const texts = TEXTS[language];
+  const [billingPeriod, setBillingPeriod] = useState("1month");
+  const [selectedPlan, setSelectedPlan] = useState("economy");
+
+  // Get localized data from constants
+  const billingOptions = texts.billingOptions.map(option => ({
+    key: option.key,
+    label: language === 'en' ? option.labelEn : option.labelAr
+  }));
+
+  const planOptions = texts.planOptions.map(option => ({
+    key: option.key,
+    label: language === 'en' ? option.labelEn : option.labelAr
+  }));
+
+  // Transform pricing plans for easier use
+  const plans = Object.keys(texts.pricingPlans).reduce((acc, key) => {
+    const plan = texts.pricingPlans[key];
+    acc[key] = {
+      name: language === 'en' ? plan.nameEn : plan.nameAr,
+      subtitle: language === 'en' ? plan.subtitleEn : plan.subtitleAr,
+      prices: plan.prices,
+      features: language === 'en' ? plan.featuresEn : plan.featuresAr,
+      buttonText: language === 'en' ? plan.buttonTextEn : plan.buttonTextAr,
+    };
+    return acc;
+  }, {});
+
+  return (
+    <section className="bg-light text-dark dark:bg-dark dark:text-light py-20">
+      <div className="container mx-auto px-6 max-w-7xl">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <p className="text-sm text-dark/70 dark:text-light/70 mb-2">
+            {language === 'en' ? texts.pricingSection.titleEn : texts.pricingSection.titleAr}
+          </p>
+          <h2 className="font-hahmlet text-4xl md:text-5xl font-bold mb-4">
+            {language === 'en' ? texts.pricingSection.headingEn : texts.pricingSection.headingAr}
+          </h2>
+          <p className="text-dark/80 dark:text-light/80 max-w-2xl mx-auto mb-8">
+            {language === 'en' ? texts.pricingSection.subtitleEn : texts.pricingSection.subtitleAr}
+          </p>
+
+          {/* Billing Period Toggle */}
+          <div className="flex justify-center mb-6">
+            <div className="bg-black/10 dark:bg-white/10 rounded-lg p-1 flex">
+              {billingOptions.map((option) => (
+                <button
+                  key={option.key}
+                  onClick={() => setBillingPeriod(option.key)}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                    billingPeriod === option.key
+                      ? "bg-white dark:bg-white text-black"
+                      : "text-dark/70 dark:text-light/70 hover:text-dark dark:hover:text-light"
+                  }`}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile Plan Toggle */}
+          <div className="flex justify-center md:hidden mb-8">
+            <div className="bg-black/10 dark:bg-white/10 rounded-lg p-1 flex flex-wrap gap-1">
+              {planOptions.map((option) => (
+                <button
+                  key={option.key}
+                  onClick={() => setSelectedPlan(option.key)}
+                  className={`px-3 py-2 rounded-md text-xs font-medium transition-all duration-200 ${
+                    selectedPlan === option.key
+                      ? "bg-white dark:bg-white text-black"
+                      : "text-dark/70 dark:text-light/70 hover:text-dark dark:hover:text-light"
+                  }`}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop Pricing Cards */}
+        <div className="hidden md:grid grid-cols-3 gap-8">
+          {Object.entries(plans).map(([key, plan]) => (
+            <div
+              key={key}
+              className="border border-black/20 dark:border-white/20 rounded-lg p-8 bg-white/70 dark:bg-white/5 backdrop-blur-sm hover:bg-white/90 dark:hover:bg-white/10 transition-all duration-300"
+            >
+              <div className="text-center mb-8">
+                <h3 className="font-hahmlet text-xl font-bold mb-2">{plan.name}</h3>
+                <p className="text-sm text-dark/60 dark:text-light/60 mb-4">{plan.subtitle}</p>
+                <div className="mb-2">
+                  <div className="flex items-center justify-center gap-2 mb-1">
+                    <span className="text-4xl font-bold">
+                      {plan.prices[billingPeriod].price}
+                    </span>
+                    <span className="text-dark/70 dark:text-light/70 text-lg">
+                      {plan.prices[billingPeriod].currency}
+                    </span>
+                  </div>
+                  <span className="text-dark/70 dark:text-light/70">
+                    {plan.prices[billingPeriod].period}
+                  </span>
+                </div>
+                {plan.prices[billingPeriod].originalPrice && (
+                  <div className="mb-2">
+                    <span className="text-sm text-dark/50 dark:text-light/50 line-through">
+                      {plan.prices[billingPeriod].originalPrice} {plan.prices[billingPeriod].currency}
+                    </span>
+                  </div>
+                )}
+                {plan.prices[billingPeriod].bonusEn && (
+                  <p className="text-sm text-green-600 dark:text-green-400 font-medium">
+                    {language === 'en' ? plan.prices[billingPeriod].bonusEn : plan.prices[billingPeriod].bonusAr}
+                  </p>
+                )}
+              </div>
+
+              <div className="space-y-3 mb-8">
+                {plan.features.map((feature, featureIndex) => (
+                  <div key={featureIndex} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-dark/80 dark:text-light/80">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              <button className="w-full bg-gradient-to-r from-green-400 to-lime-400 text-black font-bold py-3 px-6 rounded-lg hover:from-green-500 hover:to-lime-500 transition-all duration-200 transform hover:scale-105">
+                {plan.buttonText}
+              </button>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile Single Card */}
+        <div className="md:hidden">
+          {(() => {
+            const plan = plans[selectedPlan];
+            return (
+              <div className="border border-black/20 dark:border-white/20 rounded-lg p-8 bg-white/70 dark:bg-white/5 backdrop-blur-sm">
+                <div className="text-center mb-8">
+                  <h3 className="font-hahmlet text-xl font-bold mb-2">{plan.name}</h3>
+                  <p className="text-sm text-dark/60 dark:text-light/60 mb-4">{plan.subtitle}</p>
+                  <div className="mb-2">
+                    <div className="flex items-center justify-center gap-2 mb-1">
+                      <span className="text-4xl font-bold">
+                        {plan.prices[billingPeriod].price}
+                      </span>
+                      <span className="text-dark/70 dark:text-light/70 text-lg">
+                        {plan.prices[billingPeriod].currency}
+                      </span>
+                    </div>
+                    <span className="text-dark/70 dark:text-light/70">
+                      {plan.prices[billingPeriod].period}
+                    </span>
+                  </div>
+                  {plan.prices[billingPeriod].originalPrice && (
+                    <div className="mb-2">
+                      <span className="text-sm text-dark/50 dark:text-light/50 line-through">
+                        {plan.prices[billingPeriod].originalPrice} {plan.prices[billingPeriod].currency}
+                      </span>
+                    </div>
+                  )}
+                  {plan.prices[billingPeriod].bonus && (
+                    <p className="text-sm text-green-600 dark:text-green-400 font-medium">
+                      {plan.prices[billingPeriod].bonus}
+                    </p>
+                  )}
+                </div>
+
+                <div className="space-y-3 mb-8">
+                  {plan.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-sm text-dark/80 dark:text-light/80">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <button className="w-full bg-gradient-to-r from-green-400 to-lime-400 text-black font-bold py-3 px-6 rounded-lg hover:from-green-500 hover:to-lime-500 transition-all duration-200 transform hover:scale-105">
+                  {plan.buttonText}
+                </button>
+              </div>
+            );
+          })()}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Pricing;
