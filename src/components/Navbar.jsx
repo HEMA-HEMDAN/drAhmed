@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
 import { TEXTS } from "../consts/index.js";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [isDark, setIsDark] = useState(false);
@@ -79,13 +80,7 @@ const Navbar = () => {
         >
           {language === 'en' ? 'العربية' : 'English'}
         </button>
-        <button
-          onClick={toggleTheme}
-          className="text-white text-2xl md:text-3xl"
-          aria-label="Toggle theme"
-        >
-          {isDark ? "☀️" : "🌜"}
-        </button>
+        <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
       </div>
 
       {/* Mobile Navigation */}
@@ -133,13 +128,9 @@ const Navbar = () => {
               >
                 {language === 'en' ? 'العربية' : 'English'}
               </button>
-              <button
-                onClick={toggleTheme}
-                className="text-2xl md:text-3xl "
-                aria-label="Toggle theme"
-              >
-                {isDark ? "☀️" : "🌜"}
-              </button>
+              <div className="flex justify-end">
+                <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
+              </div>
             </div>
           </ul>
         </div>
