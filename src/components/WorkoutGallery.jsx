@@ -25,22 +25,6 @@ const WorkoutGallery = () => {
   }, [selectedImg]);
 
   return (
-<<<<<<< HEAD
-    <section className="px-2 py-10 md:px-16 md:py-28">
-      {/* Heading */}
-      <div className="text-center mb-10">
-        <h1
-          className="text-3xl sm:text-5xl md:text-6xl font-bold text-[#d8d8d8] tracking-wide"
-          style={{ fontFamily: "Hahmlet" }}
-        >
-          WORKOUT GALLERY
-        </h1>
-        <p
-          className="text-base sm:text-lg md:text-xl text-[#d8d8d8] mt-2"
-          style={{ fontFamily: "Heebo" }}
-        >
-          Explore the dedication and results of our clients.
-=======
     <section
       className="min-h-screen px-2 py-10 md:px-16 md:py-28 bg-light dark:bg-dark border-b-2 border-dark/10 dark:border-light/10"
       id="workouts"
@@ -52,25 +36,16 @@ const WorkoutGallery = () => {
         </h1>
         <p className="text-base sm:text-lg md:text-xl mt-2 font-heebo text-dark/70 dark:text-light/70">
           {SUBHEADING}
->>>>>>> 587cd8d210a7a1c62a5d2633c1fe138b1ca8318d
         </p>
       </div>
 
       {/* Responsive Grid */}
-<<<<<<< HEAD
-      <div className="grid grid-cols-2  md:grid-cols-3  gap-4 md:gap-6 px-2 sm:px-6 md:px-12">
-        {Gallerypics.map((pic) => (
-          <div
-            key={pic.id}
-            className="aspect-square w-full overflow-hidden rounded-xl shadow-lg hover:scale-105 transform transition duration-300"
-=======
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 px-2 sm:px-6 md:px-12">
         {Gallerypics.map((pic) => (
           <div
             key={pic.id}
             className="aspect-square w-full overflow-hidden rounded-xl shadow-lg transform transition duration-300 hover:scale-105 cursor-pointer"
             onClick={() => setSelectedImg(pic.img)}
->>>>>>> 587cd8d210a7a1c62a5d2633c1fe138b1ca8318d
           >
             <img
               src={pic.img}
