@@ -26,7 +26,7 @@ const WorkoutGallery = () => {
 
   return (
     <section
-      className="min-h-screen px-2 py-10 md:px-16 md:py-28 bg-light dark:bg-dark border-b-2 border-dark/10 dark:border-light/10"
+      className="min-h-screen px-2 py-10 md:px-16 md:py-28 border-b-2 border-dark/10 dark:border-light/10"
       id="workouts"
     >
       {/* Heading */}

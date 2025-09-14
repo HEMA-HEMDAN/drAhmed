@@ -4,6 +4,7 @@ import { PROGRAMS_SECTION } from "../consts/index.js";
 const Programs = () => {
   return (
     <section
+      id="programs"
       className="relative min-h-screen flex flex-col items-center justify-center px-4 py-16 bg-dark/80 text-light"
       style={{
         backgroundImage: "url('/assets/gym-bg.png')", // replace with your gym image
