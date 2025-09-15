@@ -501,6 +501,65 @@ export const PRICING_SECTION = {
 };
 
 // Language Text Objects - References existing constants
+export const CALCULATOR_TEXT = {
+  en: {
+    title: "Calorie Calculator",
+    sex: "Sex",
+    male: "Male",
+    female: "Female",
+    age: "Age (years)",
+    weight: "Weight (kg)",
+    height: "Height (cm)",
+    activity: "Activity level",
+    activityOptions: [
+      { value: "sedentary", label: "Sedentary (little or no exercise)" },
+      { value: "light", label: "Light (1-3 days/week)" },
+      { value: "moderate", label: "Moderate (3-5 days/week)" },
+      { value: "active", label: "Active (6-7 days/week)" },
+      { value: "very_active", label: "Very active (physical job or 2x/day)" },
+    ],
+    goal: "Goal",
+    goalOptions: [
+      { value: "maintain", label: "Maintain weight" },
+      { value: "lose", label: "Lose ~0.5 kg/week" },
+      { value: "gain", label: "Gain ~0.5 kg/week" },
+      { value: "extreme-lose", label: "Aggressive loss (~1 kg/week)" },
+      { value: "extreme-gain", label: "Aggressive gain (~1 kg/week)" },
+    ],
+    result: "Your daily calorie needs are approximately",
+    calories: "calories.",
+    enterDetails: "Enter your details to see your daily calories.",
+  },
+  ar: {
+    title: "حاسبة السعرات الحرارية",
+    sex: "الجنس",
+    male: "ذكر",
+    female: "أنثى",
+    age: "العمر (بالسنوات)",
+    weight: "الوزن (كجم)",
+    height: "الطول (سم)",
+    activity: "مستوى النشاط",
+    activityOptions: [
+      { value: "sedentary", label: "خامل (بدون أو قليل من التمارين)" },
+      { value: "light", label: "نشاط خفيف (1-3 أيام/أسبوع)" },
+      { value: "moderate", label: "نشاط متوسط (3-5 أيام/أسبوع)" },
+      { value: "active", label: "نشاط عالي (6-7 أيام/أسبوع)" },
+      { value: "very_active", label: "نشاط عالي جداً (عمل بدني أو مرتين/يوم)" },
+    ],
+    goal: "الهدف",
+    goalOptions: [
+      { value: "maintain", label: "الحفاظ على الوزن" },
+      { value: "lose", label: "خسارة ~0.5 كجم/أسبوع" },
+      { value: "gain", label: "زيادة ~0.5 كجم/أسبوع" },
+      { value: "extreme-lose", label: "خسارة سريعة (~1 كجم/أسبوع)" },
+      { value: "extreme-gain", label: "زيادة سريعة (~1 كجم/أسبوع)" },
+    ],
+    result: "احتياجك اليومي من السعرات تقريباً",
+    calories: "سعرة حرارية.",
+    enterDetails: "أدخل بياناتك لمعرفة احتياجك اليومي من السعرات.",
+  },
+};
+
 export const TEXTS = {
   en: {
     galleryPics: Gallerypics,
@@ -526,6 +585,7 @@ export const TEXTS = {
     planOptions: PLAN_OPTIONS,
     pricingPlans: PRICING_PLANS,
     pricingSection: PRICING_SECTION,
+    calculator: CALCULATOR_TEXT.en,
   },
   ar: {
     galleryPics: Gallerypics,
@@ -551,5 +611,6 @@ export const TEXTS = {
     planOptions: PLAN_OPTIONS,
     pricingPlans: PRICING_PLANS,
     pricingSection: PRICING_SECTION,
+    calculator: CALCULATOR_TEXT.ar,
   },
 };

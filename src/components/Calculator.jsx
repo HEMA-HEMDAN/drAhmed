@@ -1,4 +1,6 @@
 import React, { useMemo, useState } from "react";
+import { useLanguage } from "../contexts/LanguageContext";
+import { TEXTS } from "../consts/index.js";
 
 const activityMultipliers = {
   sedentary: 1.2,
@@ -20,10 +22,13 @@ function clampMinCalories(value, min = 1200) {
 }
 
 const Calculator = () => {
+  const { language } = useLanguage();
+  const texts = TEXTS[language].calculator;
+
   const [sex, setSex] = useState("male");
   const [age, setAge] = useState(25);
-  const [weight, setWeight] = useState(70); // kg
-  const [height, setHeight] = useState(175); // cm
+  const [weight, setWeight] = useState(70);
+  const [height, setHeight] = useState(175);
   const [activity, setActivity] = useState("moderate");
   const [target, setTarget] = useState("maintain");
 
@@ -60,24 +65,26 @@ const Calculator = () => {
   return (
     <section id="calorie-calculator" className="max-w-3xl mx-auto px-4 py-12">
       <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-gray-100">
-        Calorie Calculator
+        {texts.title}
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <label className="flex flex-col gap-1">
-          <span className="text-sm text-gray-700 dark:text-gray-300">Sex</span>
+          <span className="text-sm text-gray-700 dark:text-gray-300">
+            {texts.sex}
+          </span>
           <select
             className="border rounded px-3 py-2 bg-white text-gray-900 dark:bg-[#0b0b0b] dark:text-gray-100 dark:border-gray-700"
             value={sex}
             onChange={(e) => setSex(e.target.value)}
           >
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+            <option value="male">{texts.male}</option>
+            <option value="female">{texts.female}</option>
           </select>
         </label>
 
         <label className="flex flex-col gap-1">
           <span className="text-sm text-gray-700 dark:text-gray-300">
-            Age (years)
+            {texts.age}
           </span>
           <input
             className="border rounded px-3 py-2 bg-white text-gray-900 dark:bg-[#0b0b0b] dark:text-gray-100 dark:border-gray-700"
@@ -90,7 +97,7 @@ const Calculator = () => {
 
         <label className="flex flex-col gap-1">
           <span className="text-sm text-gray-700 dark:text-gray-300">
-            Weight (kg)
+            {texts.weight}
           </span>
           <input
             className="border rounded px-3 py-2 bg-white text-gray-900 dark:bg-[#0b0b0b] dark:text-gray-100 dark:border-gray-700"
@@ -104,7 +111,7 @@ const Calculator = () => {
 
         <label className="flex flex-col gap-1">
           <span className="text-sm text-gray-700 dark:text-gray-300">
-            Height (cm)
+            {texts.height}
           </span>
           <input
             className="border rounded px-3 py-2 bg-white text-gray-900 dark:bg-[#0b0b0b] dark:text-gray-100 dark:border-gray-700"
@@ -118,35 +125,35 @@ const Calculator = () => {
 
         <label className="flex flex-col gap-1 sm:col-span-2">
           <span className="text-sm text-gray-700 dark:text-gray-300">
-            Activity level
+            {texts.activity}
           </span>
           <select
             className="border rounded px-3 py-2 bg-white text-gray-900 dark:bg-[#0b0b0b] dark:text-gray-100 dark:border-gray-700"
             value={activity}
             onChange={(e) => setActivity(e.target.value)}
           >
-            <option value="sedentary">Sedentary (little or no exercise)</option>
-            <option value="light">Light (1-3 days/week)</option>
-            <option value="moderate">Moderate (3-5 days/week)</option>
-            <option value="active">Active (6-7 days/week)</option>
-            <option value="very_active">
-              Very active (physical job or 2x/day)
-            </option>
+            {texts.activityOptions.map((opt) => (
+              <option key={opt.value} value={opt.value}>
+                {opt.label}
+              </option>
+            ))}
           </select>
         </label>
 
         <label className="flex flex-col gap-1 sm:col-span-2">
-          <span className="text-sm text-gray-700 dark:text-gray-300">Goal</span>
+          <span className="text-sm text-gray-700 dark:text-gray-300">
+            {texts.goal}
+          </span>
           <select
             className="border rounded px-3 py-2 bg-white text-gray-900 dark:bg-[#0b0b0b] dark:text-gray-100 dark:border-gray-700"
             value={target}
             onChange={(e) => setTarget(e.target.value)}
           >
-            <option value="maintain">Maintain weight</option>
-            <option value="lose">Lose ~0.5 kg/week</option>
-            <option value="gain">Gain ~0.5 kg/week</option>
-            <option value="extreme-lose">Aggressive loss (~1 kg/week)</option>
-            <option value="extreme-gain">Aggressive gain (~1 kg/week)</option>
+            {texts.goalOptions.map((opt) => (
+              <option key={opt.value} value={opt.value}>
+                {opt.label}
+              </option>
+            ))}
           </select>
         </label>
       </div>
@@ -154,12 +161,12 @@ const Calculator = () => {
       <div className="mt-6 p-4 border rounded bg-gray-50 dark:bg-[#0b0b0b] dark:border-gray-700">
         {result == null ? (
           <p className="text-gray-600 dark:text-gray-300">
-            Enter your details to see your daily calories.
+            {texts.enterDetails}
           </p>
         ) : (
           <p className="text-gray-900 dark:text-gray-100">
-            Your daily calorie needs are approximately{" "}
-            <span className="font-semibold">{result}</span> calories.
+            {texts.result} <span className="font-semibold">{result}</span>{" "}
+            {texts.calories}
           </p>
         )}
       </div>
