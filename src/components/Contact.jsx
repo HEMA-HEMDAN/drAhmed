@@ -6,7 +6,10 @@ const Contact = () => {
   const { language } = useLanguage();
   const texts = TEXTS[language];
   return (
-    <section id="contact" className="text-dark dark:text-light py-20">
+    <section
+      id="contact"
+      className="text-dark dark:text-light py-20 border-t-2 border-dark/10 dark:border-light/10"
+    >
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid grid-cols-1  lg:grid-cols-3 gap-12  text-center">
           {texts.contactMethods.map(
