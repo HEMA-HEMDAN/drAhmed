@@ -61,7 +61,7 @@ export const CONTACT_METHODS = [
     key: "email",
     title: "EMAIL",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero.",
+      "Contact us on via email for a free consultation.",
     href: "mailto:Momoahmed722003@gmail.com",
     linkText: "Momoahmed722003@gmail.com",
     Icon: MdOutlineEmail,
@@ -71,7 +71,7 @@ export const CONTACT_METHODS = [
     key: "chat",
     title: "LIVE CHAT",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero.",
+      "Start a live chat with us to get instant answers to your questions.",
     href: `https://wa.me/${+201550043269}?text=${msg}`,
     linkText: "Start new chat",
     Icon: BsChatDots,
@@ -81,7 +81,7 @@ export const CONTACT_METHODS = [
     key: "phone",
     title: "PHONE",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero.",
+      "Contact us directly for a free personal consultation.",
     href: "tel:+201550043269",
     linkText: "+20 1550043269",
     Icon: FiPhone,
