@@ -68,7 +68,10 @@ const Pricing = () => {
   }, {});
 
   return (
-    <section className=" text-dark dark:text-light py-20">
+    <section
+      id="pricing"
+      className=" text-dark dark:text-light py-20 border-b-2 border-dark/10 dark:border-light/10 "
+    >
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16">

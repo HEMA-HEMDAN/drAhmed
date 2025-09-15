@@ -36,14 +36,6 @@ export const Gallerypics = [
   },
 ];
 const msg = "يلا بينا نتمرن";
-export const NAV_LINKS = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#trainer" },
-  { label: "Workouts", href: "#workouts" },
-  { label: "Contact", href: "#contact" },
-  { label: "Programs", href: "#programs" },
-  { label: "Testimonials", href: "#testimonials" },
-];
 export const HEADLINE = `Transform Your Body.
 Unlock Your Potential.`;
 
@@ -178,10 +170,20 @@ export const TESTIMONIALS_DATA = [
 const ARABIC_NAV_LINKS = [
   { label: "الرئيسية", href: "#" },
   { label: "حول المدرب", href: "#trainer" },
-  { label: "التمارين", href: "#workouts" },
-  { label: "اتصل بنا", href: "#contact" },
   { label: "البرامج", href: "#programs" },
   { label: "الشهادات", href: "#testimonials" },
+  { label: "الاسعار", href: "#pricing" },
+  { label: "التمارين", href: "#workouts" },
+  { label: "اتصل بنا", href: "#contact" },
+];
+export const NAV_LINKS = [
+  { label: "Home", href: "#" },
+  { label: "About", href: "#trainer" },
+  { label: "Programs", href: "#programs" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Workouts", href: "#workouts" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const ARABIC_HEADLINE = `حول جسدك.
