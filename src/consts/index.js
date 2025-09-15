@@ -174,6 +174,7 @@ const ARABIC_NAV_LINKS = [
   { label: "الشهادات", href: "#testimonials" },
   { label: "الاسعار", href: "#pricing" },
   { label: "التمارين", href: "#workouts" },
+  { label: "حساب السعرات", href: "#calorie-calculator" },
   { label: "اتصل بنا", href: "#contact" },
 ];
 export const NAV_LINKS = [
@@ -183,6 +184,7 @@ export const NAV_LINKS = [
   { label: "Testimonials", href: "#testimonials" },
   { label: "Pricing", href: "#pricing" },
   { label: "Workouts", href: "#workouts" },
+  { label: "claorie Calculator", href: "#calorie-calculator" },
   { label: "Contact", href: "#contact" },
 ];
 

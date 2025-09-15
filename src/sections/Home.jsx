@@ -6,6 +6,7 @@ import Contact from "../components/Contact";
 import Programs from "../components/Programs";
 import Testimonials from "../components/Testimonials";
 import Pricing from "../components/Pricing";
+import Calculator from "../components/Calculator";
 const Home = () => {
   document.title = "Home";
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <Testimonials />
       <Pricing />
       <WorkoutGallery />
+      <Calculator />
       <Contact />
     </>
   );
