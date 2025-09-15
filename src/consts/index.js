@@ -60,8 +60,7 @@ export const CONTACT_METHODS = [
   {
     key: "email",
     title: "EMAIL",
-    description:
-      "Contact us on via email for a free consultation.",
+    description: "Contact us on via email for a free consultation.",
     href: "mailto:Momoahmed722003@gmail.com",
     linkText: "Momoahmed722003@gmail.com",
     Icon: MdOutlineEmail,
@@ -80,8 +79,7 @@ export const CONTACT_METHODS = [
   {
     key: "phone",
     title: "PHONE",
-    description:
-      "Contact us directly for a free personal consultation.",
+    description: "Contact us directly for a free personal consultation.",
     href: "tel:+201550043269",
     linkText: "+20 1550043269",
     Icon: FiPhone,
@@ -305,6 +303,10 @@ export const PRICING_PLANS = {
     nameAr: "المتابعة الأسبوعية",
     subtitleEn: "Economy Plan - Inside Egypt Only",
     subtitleAr: "الخطة الاقتصادية - داخل مصر فقط",
+    paymentMethodEn: "Payment via InstaPay",
+    paymentMethodAr: "الدفع عبر إنستاباي",
+    paymentDetailsEn: "+201550043269",
+    paymentDetailsAr: "+201550043269",
     prices: {
       "1month": {
         price: "800",
@@ -359,6 +361,10 @@ export const PRICING_PLANS = {
     nameAr: "المتابعة اليومية",
     subtitleEn: "Premium Plan - Inside & Outside Egypt",
     subtitleAr: "الخطة المميزة - داخل وخارج مصر",
+    paymentMethodEn: "Payment via InstaPay",
+    paymentMethodAr: "الدفع عبر إنستاباي",
+    paymentDetailsEn: "+201550043269",
+    paymentDetailsAr: "+201550043269",
     prices: {
       "1month": {
         price: "1000",
@@ -419,6 +425,10 @@ export const PRICING_PLANS = {
     nameAr: "الخطة النخبوية",
     subtitleEn: "Elite Plan - Premium Features",
     subtitleAr: "الخطة النخبوية - مميزات إضافية",
+    paymentMethodEn: "Payment via PayPal",
+    paymentMethodAr: "الدفع عبر باي بال",
+    paymentDetailsEn: "momoahmed722003@gmail.com",
+    paymentDetailsAr: "momoahmed722003@gmail.com",
     prices: {
       "1month": {
         price: "1500",

@@ -63,6 +63,9 @@ const Pricing = () => {
       prices: plan.prices,
       features: language === "en" ? plan.featuresEn : plan.featuresAr,
       buttonText: language === "en" ? plan.buttonTextEn : plan.buttonTextAr,
+      paymentMethod:
+        language === "en" ? plan.paymentMethodEn : plan.paymentMethodAr,
+      paymentDetails: plan.paymentDetailsEn || plan.paymentDetailsAr,
     };
     return acc;
   }, {});
@@ -135,13 +138,13 @@ const Pricing = () => {
           {Object.entries(plans).map(([key, plan]) => (
             <div
               key={key}
-              className=" flex flex-col item-center justify-between h-full border border-black/20 dark:border-white/20 rounded-lg p-8 bg-white/70 dark:bg-white/5 backdrop-blur-sm hover:bg-white/90 dark:hover:bg-white/10 transition-all duration-300"
+              className=" flex flex-col item-center justify-between h-full border border-black/20 dark:border-white/20 rounded-lg p-6 bg-white/70 dark:bg-white/5 backdrop-blur-sm hover:bg-white/90 dark:hover:bg-white/10 transition-all duration-300"
             >
-              <div className="text-center mb-8">
+              <div className="text-center mb-6">
                 <h3 className="font-hahmlet text-xl font-bold mb-2">
                   {plan.name}
                 </h3>
-                <p className="text-sm text-dark/60 dark:text-light/60 mb-4">
+                <p className="text-sm text-dark/60 dark:text-light/60 mb-3">
                   {plan.subtitle}
                 </p>
                 <div className="mb-2">
@@ -174,10 +177,11 @@ const Pricing = () => {
                 )}
               </div>
 
-              <div className="space-y-3 mb-8">
+              <div className="space-y-2 mb-6">
+                <h3></h3>
                 {plan.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <div key={featureIndex} className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
                     <span className="text-sm text-dark/80 dark:text-light/80">
                       {feature}
                     </span>
@@ -185,12 +189,64 @@ const Pricing = () => {
                 ))}
               </div>
 
-              <button
-                onClick={() => handleWhatsAppClick(key)}
-                className="w-full bg-gradient-to-r from-green-400 to-lime-400 text-black font-bold py-3 px-6 rounded-lg hover:from-green-500 hover:to-lime-500 transition-all duration-200 transform hover:scale-105"
-              >
-                {plan.buttonText}
-              </button>
+              {/* Payment Details Section */}
+              <div className="flex item-center justify-end flex-col">
+                <div
+                  className="mb-4 p-4 bg-gradient-to-br from-blue-500 via-cyan-500 to-teal-600 dark:from-blue-600 dark:via-cyan-600 dark:to-teal-700 rounded-xl cursor-pointer hover:from-blue-600 hover:via-cyan-600 hover:to-teal-700 dark:hover:from-blue-700 dark:hover:via-cyan-700 dark:hover:to-teal-800 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg border border-white/20"
+                  onClick={() => {
+                    if (key === "elite") {
+                      // PayPal payment link
+                      window.open(
+                        `https://www.paypal.me/ahmedgad370`,
+                        "_blank"
+                      );
+                    } else {
+                      window.open(
+                        `https://ipn.eg/S/ahmedgad722003a/instapay/97PpKT`,
+                        "_blank"
+                      );
+                    }
+                  }}
+                >
+                  <div className="text-center">
+                    <div className="mb-3">
+                      <div className="w-12 h-12 mx-auto bg-white/20 rounded-full flex items-center justify-center mb-3">
+                        <svg
+                          className="w-6 h-6 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <h4 className="text-sm font-bold text-white mb-2">
+                      {plan.paymentMethod}
+                    </h4>
+                    {plan.paymentDetails && (
+                      <p className="text-xs text-white/90 font-mono bg-white/10 px-3 py-1 rounded-full mb-2">
+                        {plan.paymentDetails}
+                      </p>
+                    )}
+                    <p className="text-xs text-white/80 font-medium">
+                      {language === "en" ? "Click to pay" : "اضغط للدفع"}
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => handleWhatsAppClick(key)}
+                  className="w-full bg-gradient-to-r from-green-400 to-lime-400 text-black font-bold py-3 px-6 rounded-lg hover:from-green-500 hover:to-lime-500 transition-all duration-200 transform hover:scale-105"
+                >
+                  {plan.buttonText}
+                </button>
+              </div>
             </div>
           ))}
         </div>
@@ -200,12 +256,12 @@ const Pricing = () => {
           {(() => {
             const plan = plans[selectedPlan];
             return (
-              <div className="border border-black/20 dark:border-white/20 rounded-lg p-8 bg-white/70 dark:bg-white/5 backdrop-blur-sm">
-                <div className="text-center mb-8">
+              <div className="w-full md:w-1/2 border border-black/20 dark:border-white/20 rounded-lg p-6 bg-white/70 dark:bg-white/5 backdrop-blur-sm">
+                <div className="text-center mb-6">
                   <h3 className="font-hahmlet text-xl font-bold mb-2">
                     {plan.name}
                   </h3>
-                  <p className="text-sm text-dark/60 dark:text-light/60 mb-4">
+                  <p className="text-sm text-dark/60 dark:text-light/60 mb-3">
                     {plan.subtitle}
                   </p>
                   <div className="mb-2">
@@ -236,15 +292,64 @@ const Pricing = () => {
                   )}
                 </div>
 
-                <div className="space-y-3 mb-8">
+                <div className="space-y-2 mb-6">
                   {plan.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div key={featureIndex} className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-sm text-dark/80 dark:text-light/80">
                         {feature}
                       </span>
                     </div>
                   ))}
+                </div>
+
+                {/* Payment Details Section */}
+                <div
+                  className="mb-4 p-4 bg-gradient-to-br from-blue-500 via-cyan-500 to-teal-600 dark:from-blue-600 dark:via-cyan-600 dark:to-teal-700 rounded-xl cursor-pointer hover:from-blue-600 hover:via-cyan-600 hover:to-teal-700 dark:hover:from-blue-700 dark:hover:via-cyan-700 dark:hover:to-teal-800 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg border border-white/20"
+                  onClick={() => {
+                    if (selectedPlan === "elite") {
+                      const paypalLink = "https://www.paypal.me/ahmedgad370";
+
+                      window.open(paypalLink, "_blank");
+                    } else {
+                      // InstaPay - redirect to WhatsApp with payment message
+                      window.open(
+                        `https://ipn.eg/S/ahmedgad722003a/instapay/97PpKT`,
+                        "_blank"
+                      );
+                    }
+                  }}
+                >
+                  <div className="text-center">
+                    <div className="mb-3">
+                      <div className="w-12 h-12 mx-auto bg-white/20 rounded-full flex items-center justify-center mb-3">
+                        <svg
+                          className="w-6 h-6 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <h4 className="text-sm font-bold text-white mb-2">
+                      {plan.paymentMethod}
+                    </h4>
+                    {plan.paymentDetails && (
+                      <p className="text-xs text-white/90 font-mono bg-white/10 px-3 py-1 rounded-full mb-2">
+                        {plan.paymentDetails}
+                      </p>
+                    )}
+                    <p className="text-xs text-white/80 font-medium">
+                      {language === "en" ? "Click to pay" : "اضغط للدفع"}
+                    </p>
+                  </div>
                 </div>
 
                 <button
