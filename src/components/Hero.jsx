@@ -11,12 +11,20 @@ const FitnessApp = () => {
       className="relative min-h-[95vh] md:min-h-[90vh] w-full flex items-center justify-center mt-12 md:mt-20"
       aria-label="Fitness hero section"
     >
-      {/* Background Image */}
+      {/* Background Video */}
+      <video
+        src="/assets/herrro.mp4"
+        autoPlay
+        loop
+        muted
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      {/* Background Image
       <img
         src="/assets/hero.jpg" // Replace with your own image
         alt="Fitness background"
         className="absolute inset-0 h-full w-full object-cover"
-      />
+      /> */}
 
       {/* Overlay (dark gradient for readability) */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
