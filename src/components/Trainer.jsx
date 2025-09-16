@@ -14,7 +14,7 @@ const TrainerProfile = () => {
   return (
     <section
       id="trainer"
-      className="flex min-h-screen flex-col-reverse items-center justify-center text-dark dark:text-light lg:flex-row lg:gap-12 lg:p-16 border-b-2 border-dark/10 dark:border-light/10"
+      className="flex min-h-screen flex-col-reverse items-center justify-center text-dark dark:text-light lg:flex-row lg:gap-12 lg:p-16  pb-12"
     >
       {/* Text Content */}
       <div className="mt-8 flex flex-col items-center text-center lg:mt-0 lg:w-1/2">

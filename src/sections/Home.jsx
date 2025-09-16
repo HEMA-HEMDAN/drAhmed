@@ -7,6 +7,7 @@ import Programs from "../components/Programs";
 import Testimonials from "../components/Testimonials";
 import Pricing from "../components/Pricing";
 import Calculator from "../components/Calculator";
+import GymRenderer from "../components/models/GymRenderer";
 const Home = () => {
   document.title = "Home";
   return (
@@ -17,7 +18,8 @@ const Home = () => {
       <Testimonials />
       <Pricing />
       <WorkoutGallery />
-      <Calculator />
+      <GymRenderer />
+
       <Contact />
     </>
   );
