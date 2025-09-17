@@ -8,12 +8,14 @@ import Testimonials from "../components/Testimonials";
 import Pricing from "../components/Pricing";
 import Calculator from "../components/Calculator";
 import GymRenderer from "../components/models/GymRenderer";
+import AnimatedCounter from "../components/AnimatedCounter";
 const Home = () => {
   document.title = "Home";
   return (
     <>
       <Hero />
       <Trainer />
+      <AnimatedCounter />
       <Programs />
       <Testimonials />
       <Pricing />

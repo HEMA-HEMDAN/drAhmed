@@ -560,6 +560,20 @@ export const CALCULATOR_TEXT = {
   },
 };
 
+const COUNTER_ITEMS_EN = [
+  { value: 7, suffix: "+", label: "Years of Experience" },
+  { value: 200, suffix: "+", label: "Satisfied Clients" },
+  // { value: 50, suffix: "+", label: "Completed Programs" },
+  { value: 99, suffix: "%", label: "Client Retention Rate" },
+];
+
+const COUNTER_ITEMS_AR = [
+  { value: 7, suffix: "+", label: "سنوات الخبرة" },
+  { value: 200, suffix: "+", label: "عملاء سعداء" },
+  // { value: 50, suffix: "+", label: "برامج مكتملة" },
+  { value: 99, suffix: "%", label: "معدل الاحتفاظ بالعملاء" },
+];
+
 export const TEXTS = {
   en: {
     galleryPics: Gallerypics,
@@ -586,6 +600,7 @@ export const TEXTS = {
     pricingPlans: PRICING_PLANS,
     pricingSection: PRICING_SECTION,
     calculator: CALCULATOR_TEXT.en,
+    counterItems: COUNTER_ITEMS_EN,
   },
   ar: {
     galleryPics: Gallerypics,
@@ -612,5 +627,6 @@ export const TEXTS = {
     pricingPlans: PRICING_PLANS,
     pricingSection: PRICING_SECTION,
     calculator: CALCULATOR_TEXT.ar,
+    counterItems: COUNTER_ITEMS_AR,
   },
 };
