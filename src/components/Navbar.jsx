@@ -1,16 +1,14 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
 import { TEXTS } from "../consts/index.js";
 import ThemeToggle from "./ThemeToggle";
-import gsap from "gsap";
 
 const Navbar = () => {
   const [isDark, setIsDark] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const { language, toggleLanguage } = useLanguage();
   const texts = TEXTS[language];
-  const sectionRef = useRef(null);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -31,29 +29,6 @@ const Navbar = () => {
     }
   }, []);
 
-  useEffect(() => {
-    const context = gsap.context(() => {
-      gsap.set([sectionRef.current], {
-        filter: "blur(10px)",
-        opacity: 0,
-        y: -20,
-      });
-
-      const tl = gsap.timeline({
-        defaults: { ease: "power3.out" },
-        delay: 2.2,
-      });
-      tl.to(sectionRef.current, {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        duration: 0.9,
-      });
-    }, sectionRef);
-
-    return () => context.revert();
-  }, []);
-
   const toggleTheme = () => {
     const root = document.documentElement;
     const body = document.body;
@@ -66,10 +41,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav
-      ref={sectionRef}
-      className="reveal-blur fixed top-0 right-0 left-0 px-4 py-2 flex flex-row items-center z-40 bg-gradient-to-r from-black via-[#333333] to-[#666666] shadow-lg"
-    >
+    <nav className="fixed top-0 right-0 left-0 px-4 py-2 flex flex-row items-center z-40 bg-gradient-to-r from-black via-[#333333] to-[#666666] shadow-lg">
       {/* Logo - Left */}
       <Link to="/" className="text-2xl flex flex-row items-center">
         <img
