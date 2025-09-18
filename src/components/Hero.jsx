@@ -18,7 +18,10 @@ const FitnessApp = () => {
         y: 20,
       });
 
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" }, delay: 3 });
+      const tl = gsap.timeline({
+        defaults: { ease: "power3.out" },
+        delay: 2.2,
+      });
       tl.to(headingRef.current, {
         opacity: 1,
         y: 0,
@@ -39,7 +42,7 @@ const FitnessApp = () => {
           opacity: 1,
           y: 0,
           filter: "blur(0px)",
-          duration: 0.8,
+          duration: 0.5,
         });
     }, sectionRef);
 
