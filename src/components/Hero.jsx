@@ -8,31 +8,39 @@ const FitnessApp = () => {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const subtitleRef = useRef(null);
+  const buttonRef = useRef(null);
 
   useEffect(() => {
     const context = gsap.context(() => {
-      gsap.set([headingRef.current, subtitleRef.current], {
+      gsap.set([headingRef.current, subtitleRef.current, buttonRef.current], {
         filter: "blur(10px)",
         opacity: 0,
         y: 20,
       });
 
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" }, delay: 2 });
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" }, delay: 3 });
       tl.to(headingRef.current, {
         opacity: 1,
         y: 0,
         filter: "blur(0px)",
         duration: 0.9,
-      }).to(
-        subtitleRef.current,
-        {
+      })
+        .to(
+          subtitleRef.current,
+          {
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+            duration: 0.8,
+          },
+          "-=0.4"
+        )
+        .to(buttonRef.current, {
           opacity: 1,
           y: 0,
           filter: "blur(0px)",
           duration: 0.8,
-        },
-        "-=0.4"
-      );
+        });
     }, sectionRef);
 
     return () => context.revert();
@@ -98,6 +106,7 @@ const FitnessApp = () => {
 
         {/* CTA Button */}
         <a
+          ref={buttonRef}
           href="#pricing"
           className="
              inline-block

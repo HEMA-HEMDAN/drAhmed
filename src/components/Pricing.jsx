@@ -10,6 +10,7 @@ const Pricing = () => {
   const [billingPeriod, setBillingPeriod] = useState("1month");
   const [selectedPlan, setSelectedPlan] = useState("economy");
   const sectionRef = useRef(null);
+  const cardRef = useRef(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -24,7 +25,7 @@ const Pricing = () => {
         duration: 0.7,
         stagger: 0.12,
         scrollTrigger: {
-          trigger: sectionRef.current,
+          trigger: [sectionRef.current, cardRef.current],
           start: "top 75%",
         },
       });
@@ -282,11 +283,14 @@ const Pricing = () => {
         </div>
 
         {/* Mobile Single Card */}
-        <div className="lg:hidden w-full  flex item-center justify-center">
+        <div className="lg:hidden w-full  flex item-center justify-center ">
           {(() => {
             const plan = plans[selectedPlan];
             return (
-              <div className="w-full md:w-1/2 border border-black/20 dark:border-white/20 rounded-lg p-6 bg-white/70 dark:bg-white/5 backdrop-blur-sm">
+              <div
+                ref={cardRef}
+                className="w-full md:w-1/2 border border-black/20 dark:border-white/20 rounded-lg p-6 bg-white/70 dark:bg-white/5 backdrop-blur-sm pricing-card"
+              >
                 <div className="text-center mb-6">
                   <h3 className="font-hahmlet text-xl font-bold mb-2">
                     {plan.name}
