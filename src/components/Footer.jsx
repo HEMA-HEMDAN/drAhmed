@@ -4,7 +4,7 @@ import logo from "../../public/assets/logo-dark.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-light pt-16 pb-4 border-t border-neutral-800">
+    <footer className="reveal-up bg-gradient-to-br from-gray-900 via-gray-800 to-black text-light pt-16 pb-4 border-t border-neutral-800">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
           <img

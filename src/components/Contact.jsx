@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="text-dark dark:text-light py-20 border-t-2 border-dark/10 dark:border-light/10"
+      className="reveal-up text-dark dark:text-light py-20 border-t-2 border-dark/10 dark:border-light/10"
     >
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid grid-cols-1  lg:grid-cols-3 gap-12  text-center">
@@ -16,7 +16,7 @@ const Contact = () => {
             ({ key, title, description, href, linkText, Icon, aria }) => (
               <div
                 key={key}
-                className="flex flex-col items-center justify-between"
+                className="reveal-scale flex flex-col items-center justify-between"
               >
                 <div className="mx-auto mb-4 w-12 h-12 flex items-center justify-center ">
                   <Icon className="text-4xl" />

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./sections/Home";
 import Navbar from "./components/Navbar";
@@ -9,6 +11,45 @@ import NotFound from "./sections/NotFound";
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      const defaults = { ease: "power3.out", duration: 0.7 };
+
+      gsap.utils.toArray(".reveal-up").forEach((el) => {
+        gsap.from(el, {
+          opacity: 0,
+          y: 24,
+          filter: "blur(8px)",
+          ...defaults,
+          scrollTrigger: { trigger: el, start: "top 85%" },
+        });
+      });
+
+      gsap.utils.toArray(".reveal-scale").forEach((el) => {
+        gsap.from(el, {
+          opacity: 0,
+          scale: 0.9,
+          y: 16,
+          ...defaults,
+          scrollTrigger: { trigger: el, start: "top 85%" },
+        });
+      });
+
+      gsap.utils.toArray(".reveal-blur").forEach((el) => {
+        gsap.from(el, {
+          opacity: 0,
+          filter: "blur(12px)",
+          ...defaults,
+          scrollTrigger: { trigger: el, start: "top 90%" },
+        });
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   useEffect(() => {
     const handleLoad = () => {

@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLanguage } from "../contexts/LanguageContext";
 import { TEXTS } from "../consts/index.js";
 
@@ -7,6 +9,28 @@ const Pricing = () => {
   const texts = TEXTS[language];
   const [billingPeriod, setBillingPeriod] = useState("1month");
   const [selectedPlan, setSelectedPlan] = useState("economy");
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray(".pricing-card");
+      gsap.set(cards, { opacity: 0, y: 24, filter: "blur(8px)" });
+      gsap.to(cards, {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        ease: "power3.out",
+        duration: 0.7,
+        stagger: 0.12,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+        },
+      });
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
 
   // WhatsApp contact number
   const whatsappNumber = "+201550043269";
@@ -72,6 +96,7 @@ const Pricing = () => {
 
   return (
     <section
+      ref={sectionRef}
       id="pricing"
       className=" text-dark dark:text-light py-20 border-b-2 border-dark/10 dark:border-light/10 "
     >
@@ -143,7 +168,7 @@ const Pricing = () => {
           {Object.entries(plans).map(([key, plan]) => (
             <div
               key={key}
-              className=" flex flex-col item-center justify-between h-full border border-black/20 dark:border-white/20 rounded-lg p-6 bg-white/70 dark:bg-white/5 backdrop-blur-sm hover:bg-white/90 dark:hover:bg-white/10 transition-all duration-300"
+              className="pricing-card flex flex-col item-center justify-between h-full border border-black/20 dark:border-white/20 rounded-lg p-6 bg-white/70 dark:bg-white/5 backdrop-blur-sm hover:bg-white/90 dark:hover:bg-white/10 transition-all duration-300"
             >
               <div className="text-center mb-6">
                 <h3 className="font-hahmlet text-xl font-bold mb-2">

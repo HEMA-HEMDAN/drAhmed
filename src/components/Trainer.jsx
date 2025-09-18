@@ -14,7 +14,7 @@ const TrainerProfile = () => {
   return (
     <section
       id="trainer"
-      className="flex min-h-screen flex-col-reverse items-center justify-center text-dark dark:text-light lg:flex-row lg:gap-12 lg:p-16  pb-12"
+      className="reveal-up flex min-h-screen flex-col-reverse items-center justify-center text-dark dark:text-light lg:flex-row lg:gap-12 lg:p-16  pb-12"
     >
       {/* Text Content */}
       <div className="mt-8 flex flex-col items-center text-center lg:mt-0 lg:w-1/2">
@@ -60,7 +60,7 @@ const TrainerProfile = () => {
       </div>
 
       {/* Image Container */}
-      <div className=" overflow-hidden rounded-xl shadow-2xl m-4 lg:w-1/3">
+      <div className="reveal-scale overflow-hidden rounded-xl shadow-2xl m-4 lg:w-1/3">
         <img
           src={IMAGE_SRC}
           alt={texts.imageAlt}

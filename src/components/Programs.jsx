@@ -20,7 +20,7 @@ const Programs = () => {
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl text-center">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12">
+        <h2 className="reveal-up text-3xl sm:text-4xl md:text-5xl font-bold mb-12">
           {texts.programsSection.heading}
         </h2>
 
@@ -28,7 +28,7 @@ const Programs = () => {
           {texts.programsSection.items.map((item, index) => (
             <div
               key={index}
-              className="bg-black/40 p-6 rounded-xl shadow-lg flex flex-col items-center text-center transition-transform duration-300 hover:scale-105"
+              className="reveal-scale bg-black/40 p-6 rounded-xl shadow-lg flex flex-col items-center text-center transition-transform duration-300 hover:scale-105"
             >
               <span className="text-4xl mb-4">{item.icon}</span>
               <h3 className="text-lg sm:text-xl font-bold mb-3">
