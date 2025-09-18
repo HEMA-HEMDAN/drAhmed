@@ -23,6 +23,7 @@ const Footer = () => {
                 key={label}
                 aria-label={label}
                 href={href}
+                target="_blank"
                 className="hover:opacity-80 h-10 w-10 md:h-12 md:w-12 flex items-center justify-center hover:bg-white hover:text-black rounded-full transition-all duration-300 ease-in-out"
               >
                 <Icon />

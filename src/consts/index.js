@@ -105,11 +105,11 @@ export const SOCIAL_LINKS = [
 ];
 export const links = [
   {
-    href: "https://mohamedwael.vercel.app/",
+    href: "https://mo-wael.com",
     text: "© 2025 Mohamed Wael.",
   },
   {
-    href: "https://hema-cyan.vercel.app/",
+    href: "https://ibrahim-hemdan.com",
     text: "© 2025 HEMA.",
   },
 ];

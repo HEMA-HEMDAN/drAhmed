@@ -44,7 +44,6 @@ const WorkoutGallery = () => {
             onClick={() => setSelectedImg(pic.img)}
           >
             <h1 className="text-3xl lg:text-5xl  text-center font-bold mb-5 text-dark dark:text-light">
-              {" "}
               Before - After
             </h1>
             <img
