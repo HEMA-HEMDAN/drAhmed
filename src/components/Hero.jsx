@@ -128,6 +128,7 @@ const FitnessApp = () => {
               font-medium
               shadow-md
               text-sm sm:text-base md:text-lg
+              animate-pulse
             "
         >
           {texts.ctaText}

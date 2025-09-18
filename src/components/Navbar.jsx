@@ -46,7 +46,7 @@ const Navbar = () => {
       <Link to="/" className="text-2xl flex flex-row items-center">
         <img
           src="/assets/logo-dark.png"
-          className="w-16 object-contain"
+          className="w-16 object-contain  animate-bounce"
           alt="logo"
         />
       </Link>
