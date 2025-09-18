@@ -302,8 +302,8 @@ export const PRICING_PLANS = {
     nameAr: "المتابعة الأسبوعية",
     subtitleEn: "Economy Plan - Inside Egypt Only",
     subtitleAr: "الخطة الاقتصادية - داخل مصر فقط",
-    paymentMethodEn: "Payment via InstaPay",
-    paymentMethodAr: "الدفع عبر إنستاباي",
+    paymentMethodEn: "Payment via InstaPay or Wallet Number",
+    paymentMethodAr: "الدفع عبر إنستاباي اوعن طريق رقم المحفظه",
     paymentDetailsEn: "+201550043269",
     paymentDetailsAr: "+201550043269",
     prices: {
@@ -360,8 +360,8 @@ export const PRICING_PLANS = {
     nameAr: "المتابعة اليومية",
     subtitleEn: "Premium Plan - Inside Egypt Only",
     subtitleAr: "الخطة المميزة - داخل مصر فقط",
-    paymentMethodEn: "Payment via InstaPay",
-    paymentMethodAr: "الدفع عبر إنستاباي",
+    paymentMethodEn: "Payment via InstaPay or Wallet Number",
+    paymentMethodAr: "الدفع عبر إنستاباي اوعن طريق رقم المحفظه",
     paymentDetailsEn: "+201550043269",
     paymentDetailsAr: "+201550043269",
     prices: {

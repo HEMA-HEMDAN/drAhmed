@@ -88,10 +88,15 @@ const Pricing = () => {
               ? texts.pricingSection.headingEn
               : texts.pricingSection.headingAr}
           </h2>
-          <p className="text-dark/80 dark:text-light/80 max-w-2xl mx-auto mb-8">
+          {/* <p className="text-dark/80 dark:text-light/80 max-w-2xl mx-auto mb-8">
             {language === "en"
               ? texts.pricingSection.subtitleEn
               : texts.pricingSection.subtitleAr}
+          </p> */}
+          <p className="text-dark/80 dark:text-light/80 max-w-2xl mx-auto mb-8">
+            {language === "en"
+              ? "after payment sent a screenshot to whatsapp to get the plan"
+              : "بعد الدفع أرسل لقطة شاشة على الواتساب للحصول على الخطة"}
           </p>
 
           {/* Billing Period Toggle */}
