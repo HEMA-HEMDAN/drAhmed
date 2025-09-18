@@ -62,7 +62,7 @@ const FitnessApp = () => {
 
         {/* CTA Button */}
         <a
-          href="#trainer"
+          href="#pricing"
           className="
              inline-block
               px-5 sm:px-6

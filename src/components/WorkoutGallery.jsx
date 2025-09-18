@@ -36,18 +36,21 @@ const WorkoutGallery = () => {
       </div>
 
       {/* Responsive Grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 px-2 sm:px-6 md:px-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 px-2 sm:px-6 md:px-12 ">
         {texts.galleryPics.map((pic) => (
           <div
             key={pic.id}
-            className="aspect-square w-full overflow-hidden rounded-xl shadow-lg transform transition duration-300 hover:scale-105 cursor-pointer"
+            className=" w-full overflow-hidden rounded-xl shadow-lg transform transition duration-300 hover:scale-105 cursor-pointer"
             onClick={() => setSelectedImg(pic.img)}
           >
+            <h1 className="text-3xl lg:text-5xl  text-center font-bold mb-5 text-dark dark:text-light">
+              {" "}
+              Before - After
+            </h1>
             <img
               src={pic.img}
               alt={pic.title || texts.altText}
-              className="w-full h-full object-cover"
-              loading="lazy"
+              className="w-full  object-cover"
             />
           </div>
         ))}

@@ -20,7 +20,7 @@ const TrainerProfile = () => {
       <div className="mt-8 flex flex-col items-center text-center lg:mt-0 lg:w-1/2">
         <h2
           className="
-            mb-6 font-serif font-bold uppercase leading-tight
+            mb-6 font-serif font-bold  leading-tight
             text-3xl sm:text-4xl md:text-5xl lg:text-6xl
           "
         >
@@ -28,7 +28,7 @@ const TrainerProfile = () => {
         </h2>
         <p
           className="
-            max-w-md text-base sm:text-lg md:text-xl text-dark/85 dark:text-light/85
+            max-w-xl text-base sm:text-lg md:text-xl text-dark/85 dark:text-light/85
             leading-relaxed mb-8
           "
         >
@@ -60,7 +60,7 @@ const TrainerProfile = () => {
       </div>
 
       {/* Image Container */}
-      <div className="relative overflow-hidden rounded-xl shadow-2xl m-4 lg:w-1/3">
+      <div className=" overflow-hidden rounded-xl shadow-2xl m-4 lg:w-1/3">
         <img
           src={IMAGE_SRC}
           alt={texts.imageAlt}
