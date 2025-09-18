@@ -290,9 +290,11 @@ const Pricing = () => {
                       </span>
                     </div>
                   )}
-                  {plan.prices[billingPeriod].bonus && (
+                  {plan.prices[billingPeriod].bonusEn && (
                     <p className="text-sm text-green-600 dark:text-green-400 font-medium">
-                      {plan.prices[billingPeriod].bonus}
+                      {language === "en"
+                        ? plan.prices[billingPeriod].bonusEn
+                        : plan.prices[billingPeriod].bonusAr}
                     </p>
                   )}
                 </div>

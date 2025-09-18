@@ -181,7 +181,7 @@ export const NAV_LINKS = [
   { label: "Testimonials", href: "#testimonials" },
   { label: "Pricing", href: "#pricing" },
   { label: "Workouts", href: "#workouts" },
-  { label: "claorie Calculator", href: "#calorie-calculator" },
+  { label: "Claorie Calculator", href: "#calorie-calculator" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -318,16 +318,16 @@ export const PRICING_PLANS = {
         currency: "EGP",
         period: "/3mo",
         originalPrice: "2000",
-        // bonusEn: "1 month free",
-        // bonusAr: "+1 شهر مجاناً",
+        bonusEn: "",
+        bonusAr: "",
       },
       "6months": {
         price: "1999",
         currency: "EGP",
         period: "/6mo",
         originalPrice: "4000",
-        // bonusEn: "1 month free",
-        // bonusAr: "+1 شهر مجاناً",
+        bonusEn: "",
+        bonusAr: "",
       },
       "1year": {
         price: "3999",

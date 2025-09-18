@@ -39,6 +39,7 @@ const Footer = () => {
             <a
               key={text}
               href={href}
+              target="_blank"
               className="relative text-light text-lg font-bold 
              after:absolute after:left-0 after:-bottom-1 
              after:h-[2px] after:w-0 after:bg-white 
