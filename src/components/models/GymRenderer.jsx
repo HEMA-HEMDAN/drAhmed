@@ -135,7 +135,7 @@ const GymRenderer = () => {
 
           <OrbitControls enableZoom={false} />
         </Canvas>
-        <Leva hidden />
+        <Leva collapsed />
       </div>
       <div id="calorie-calculator" className="max-w-3xl px-4 py-12">
         <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-gray-100">

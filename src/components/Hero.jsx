@@ -34,16 +34,20 @@ const FitnessApp = () => {
             opacity: 1,
             y: 0,
             filter: "blur(0px)",
-            duration: 0.8,
+            duration: 0.2,
           },
           "-=0.4"
         )
-        .to(buttonRef.current, {
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-          duration: 0.5,
-        });
+        .to(
+          buttonRef.current,
+          {
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+            duration: 0.5,
+          },
+          "-=0.2"
+        );
     }, sectionRef);
 
     return () => context.revert();
