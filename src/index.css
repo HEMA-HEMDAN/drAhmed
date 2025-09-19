@@ -14,7 +14,24 @@
 html {
   scroll-behavior: smooth;
 }
-
+@keyframes translateY {
+  0%,
+  100% {
+    transform: translateY(10);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes translateX {
+  0%,
+  100% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
 /* Hide scrollbar for Chrome, Safari and Opera */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

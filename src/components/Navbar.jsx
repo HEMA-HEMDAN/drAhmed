@@ -78,7 +78,7 @@ const Navbar = () => {
           className="text-white text-lg font-bold px-3 py-1 rounded border border-white/30 hover:bg-white/10 transition-colors"
           aria-label="Toggle language"
         >
-          {language === 'en' ? 'العربية' : 'English'}
+          {language === "en" ? "العربية" : "English"}
         </button>
         <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
       </div>
@@ -126,7 +126,7 @@ const Navbar = () => {
                 className="text-lg font-bold px-3 py-1 rounded border border-white/30 hover:bg-white/10 transition-colors"
                 aria-label="Toggle language"
               >
-                {language === 'en' ? 'العربية' : 'English'}
+                {language === "en" ? "العربية" : "English"}
               </button>
               <div className="flex justify-end">
                 <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />

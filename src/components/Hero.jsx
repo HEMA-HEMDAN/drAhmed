@@ -1,13 +1,58 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 import { useLanguage } from "../contexts/LanguageContext";
 import { TEXTS } from "../consts/index.js";
 
 const FitnessApp = () => {
   const { language } = useLanguage();
+  const sectionRef = useRef(null);
+  const headingRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    const context = gsap.context(() => {
+      gsap.set([headingRef.current, subtitleRef.current, buttonRef.current], {
+        filter: "blur(10px)",
+        opacity: 0,
+        y: 20,
+      });
+
+      const tl = gsap.timeline({
+        defaults: { ease: "power3.out" },
+        delay: 2.2,
+      });
+      tl.to(headingRef.current, {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        duration: 0.9,
+      })
+        .to(
+          subtitleRef.current,
+          {
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+            duration: 0.8,
+          },
+          "-=0.4"
+        )
+        .to(buttonRef.current, {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: 0.5,
+        });
+    }, sectionRef);
+
+    return () => context.revert();
+  }, []);
   const texts = TEXTS[language];
 
   return (
     <section
+      ref={sectionRef}
       className="relative min-h-[95vh] md:min-h-[90vh] w-full flex items-center justify-center mt-12 md:mt-20"
       aria-label="Fitness hero section"
     >
@@ -33,6 +78,7 @@ const FitnessApp = () => {
       <div className="relative z-10 max-w-4xl px-6 text-center text-white">
         {/* Headline */}
         <h1
+          ref={headingRef}
           className="
             font-hahmlet font-bold uppercase
             text-[32px] xs:text-[40px] sm:text-[52px] md:text-[64px] lg:text-[80px]
@@ -50,6 +96,7 @@ const FitnessApp = () => {
 
         {/* Subtitle */}
         <p
+          ref={subtitleRef}
           className="
             text-white/85 font-heebo
             text-sm xs:text-base sm:text-lg md:text-xl
@@ -62,7 +109,8 @@ const FitnessApp = () => {
 
         {/* CTA Button */}
         <a
-          href="#trainer"
+          ref={buttonRef}
+          href="#pricing"
           className="
              inline-block
               px-5 sm:px-6
@@ -80,6 +128,7 @@ const FitnessApp = () => {
               font-medium
               shadow-md
               text-sm sm:text-base md:text-lg
+              animate-pulse
             "
         >
           {texts.ctaText}

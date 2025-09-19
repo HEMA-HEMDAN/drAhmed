@@ -5,35 +5,35 @@ import { FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa6";
 // i have put all the text here because when transilate to arabic the text goes nuts so at the end we are gona change all the text to arabic
 export const Gallerypics = [
   {
+    id: 2,
+    img: "/gallery/2.jpg",
+    title: "Workout",
+  },
+  {
     id: 1,
     img: "/gallery/1.jpg",
     title: "Workout",
   },
   {
-    id: 2,
-    img: "/gallery/55.jpg",
-    title: "Workout",
-  },
-  {
     id: 3,
-    img: "/gallery/44.jpg",
+    img: "/gallery/3.jpg",
     title: "Workout",
   },
-  {
-    id: 4,
-    img: "/gallery/99.JPG",
-    title: "Workout",
-  },
-  {
-    id: 5,
-    img: "/gallery/33.jpg",
-    title: "Workout",
-  },
-  {
-    id: 6,
-    img: "/gallery/88.JPG",
-    title: "Workout",
-  },
+  // {
+  //   id: 4,
+  //   img: "/gallery/99.JPG",
+  //   title: "Workout",
+  // },
+  // {
+  //   id: 5,
+  //   img: "/gallery/33.jpg",
+  //   title: "Workout",
+  // },
+  // {
+  //   id: 6,
+  //   img: "/gallery/88.JPG",
+  //   title: "Workout",
+  // },
 ];
 const msg = "يلا بينا نتمرن";
 export const HEADLINE = `Transform Your Body.
@@ -43,16 +43,16 @@ export const SUBTITLE = `Experience personalised training programmes that empowe
 strength, shed pounds, and maintain motivation. Let's embark on this
 fitness journey together!`;
 
-export const CTA_TEXT = "Start Training Today";
+export const CTA_TEXT = "Start  Now";
 // === Text Variables ===
-export const TITLE = "Meet Your Trainer";
+export const TITLE = "Who is Dr. Ahmed gad?";
 export const DESCRIPTION =
-  "I'm Ahmed, a certified personal trainer with over seven years of experience. My mission is to empower you with effective workouts, nutritional guidance, and unwavering motivation.";
-export const BUTTON_TEXT = "See Our Workouts";
+  "As a Clinical Pharmacist specialized in sports nutrition, biomechanics and Anatomy. Dr. Ahmed Gad combines scientific knowledge with practical experience to design effective programs. Over the years, he has guided 1000+ clients toward sustainable transformations, better health, and peak performance.";
+export const BUTTON_TEXT = "See some transformations";
 export const IMAGE_SRC = "/assets/ahmed.jpg"; // replace with actual trainer image
 export const IMAGE_ALT = "Ahmed, Personal Trainer";
-export const HEADING = "WORKOUT GALLERY";
-export const SUBHEADING = "Explore the dedication and results of our clients.";
+export const HEADING = "Client Transformations";
+export const SUBHEADING = "";
 export const CLOSE_BUTTON = "✕";
 export const ALT_TEXT = "Workout image";
 export const MODAL_ALT_TEXT = "Selected workout";
@@ -105,11 +105,11 @@ export const SOCIAL_LINKS = [
 ];
 export const links = [
   {
-    href: "https://mohamedwael.vercel.app/",
+    href: "https://mo-wael.com",
     text: "© 2025 Mohamed Wael.",
   },
   {
-    href: "https://hema-cyan.vercel.app/",
+    href: "https://ibrahim-hemdan.com",
     text: "© 2025 HEMA.",
   },
 ];
@@ -132,8 +132,7 @@ export const PROGRAMS_SECTION = {
     {
       icon: "🧩",
       title: "MUSCLE BUILDING – STRUCTURED STRENGTH TRAINING FOR LEAN MUSCLE.",
-      description:
-        "Build strength and size with our expert-led muscle building programmes.",
+      description: "Build strength , size and muscle building programmes.",
     },
   ],
 };
@@ -142,26 +141,26 @@ export const TESTIMONIALS_DATA = [
   {
     id: 1,
     quote:
-      "I NEVER THOUGHT I COULD ACHIEVE MY FITNESS GOALS UNTIL I STARTED TRAINING WITH AHMED. HIS PERSONALISED APPROACH AND CONSTANT MOTIVATION MADE ALL THE DIFFERENCE IN MY JOURNEY.",
-    author: "Hema Hemdan",
-    role: "Client, Fitness Enthusiast",
-    initial: "H",
+      "ana 3ayza ashkor Dr Ahmed Gad 3ala el motaba3a w 3ala el natiga el wslthala. deyman b fail eni akhss, bs howa deyman kan ma3aya b tashgee3o w wa2fto ma3aya 2drt awsl ll ana 3awza w lsa mkamla ma3ah. shokran ya Dr Ahmed  ❤❤",
+    author: "Nada from Egypt",
+    role: "Client",
+    initial: "N",
   },
   {
     id: 2,
     quote:
-      "AHMED'S EXPERTISE AND DEDICATION HELPED ME TRANSFORM MY BODY COMPLETELY. THE RESULTS SPEAK FOR THEMSELVES - I'VE NEVER FELT STRONGER OR MORE CONFIDENT.",
-    author: "Sarah Johnson",
-    role: "Client, Weight Loss Success",
-    initial: "S",
+      "والله ودي أشكر الدكتور أحمد على متابعتـه ووقفته معي بصراحة ما قصر دايم يشجعني ويعطيني دافع ومعاه قدرت أوصل لنتايج ما كنت أحلم فيها أنصح أي واحد وده يغير جسمه ويهتم بصحته يتابع معاه راح يلقى فرق كبير.",
+    author: "Ziad from Saudi Arabia ",
+    role: "Client",
+    initial: "Z",
   },
   {
     id: 3,
     quote:
-      "TRAINING WITH AHMED WAS A GAME-CHANGER. HIS PERSONALIZED PROGRAMS AND UNWAVERING SUPPORT MADE MY FITNESS JOURNEY NOT JUST SUCCESSFUL, BUT ENJOYABLE.",
-    author: "Mike Chen",
-    role: "Client, Muscle Building",
-    initial: "M",
+      "والله ي دكتور يرتني عرفتك من زمان  كنت أسكني فات ومكنتش متخيل إني أقدر أخس دهون وأزيدعضلات في نفس الوقت، بس الحمد لله ومع المتابعة معاك والتشجيع ديما وتسمعني ديما لل مشاكل ال بتواجهني تعبتك معايا اوي 😂بس الحمدلله قدرت أوصل للي أنا فيه دلوقتي. كمان الدكتور كان دايمًا بيراعي إنشغالي ووقتي، وده خلاني أقدر ألتزم وأتابع معاه باستمرار وال خلاني استمر انو كان ببعاملني ك صحبي مش مدربي بس . بجد مش مصدق النتيجة، شكرًا يا دوك والله ❤",
+    author: "Yusef from Egypt",
+    role: "Client",
+    initial: "Y",
   },
 ];
 
@@ -169,7 +168,7 @@ const ARABIC_NAV_LINKS = [
   { label: "الرئيسية", href: "#" },
   { label: "حول المدرب", href: "#trainer" },
   { label: "البرامج", href: "#programs" },
-  { label: "الشهادات", href: "#testimonials" },
+  { label: "أراء العملاء", href: "#testimonials" },
   { label: "الاسعار", href: "#pricing" },
   { label: "التمارين", href: "#workouts" },
   { label: "حساب السعرات", href: "#calorie-calculator" },
@@ -182,25 +181,24 @@ export const NAV_LINKS = [
   { label: "Testimonials", href: "#testimonials" },
   { label: "Pricing", href: "#pricing" },
   { label: "Workouts", href: "#workouts" },
-  { label: "claorie Calculator", href: "#calorie-calculator" },
+  { label: "Claorie Calculator", href: "#calorie-calculator" },
   { label: "Contact", href: "#contact" },
 ];
 
-const ARABIC_HEADLINE = `حول جسدك.
-أطلق إمكاناتك.`;
+const ARABIC_HEADLINE = `ابدأ دلوقتي عشان توصل لأفضل نسخه من نفسك`;
 
 const ARABIC_SUBTITLE = `اختبر برامج التدريب الشخصية التي تمكنك من بناء
-القوة، وفقدان الوزن، والحفاظ على الدافعية. دعنا نبدأ هذه
-رحلة اللياقة البدنية معاً!`;
+العضلات, وفقدان الوزن، والحفاظ على لياقتك البدنيه. دعنا نبدأ هذه
+رحلة اللياقة البدنية معاً`;
 
-const ARABIC_CTA_TEXT = "ابدأ التدريب اليوم";
-const ARABIC_TITLE = "تعرف على مدربك";
+const ARABIC_CTA_TEXT = "ابدأ  الأن";
+const ARABIC_TITLE = "من هو د/أحمد جاد ؟";
 const ARABIC_DESCRIPTION =
-  "أنا أحمد، مدرب شخصي معتمد مع أكثر من سبع سنوات من الخبرة. مهمتي هي تمكينك من خلال التمارين الفعالة والإرشاد الغذائي والدافعية الثابتة.";
-const ARABIC_BUTTON_TEXT = "شاهد تماريننا";
+  "دكتور احمد جاد هو دكتور صيدلي  متخصصًا في التغذية الرياضية والميكانيكا الحيوية و تشريح العضلات يجمع بين المعرفة العلمية والخبرة العملية لتصميم برامج فعالة. على مدار سبع السنين، ساعد أكثر من ألف عميل نحو تحولات مستمره, وصحة أفضل، وأداء رياضي متميز";
+const ARABIC_BUTTON_TEXT = "شاهد بعض التحولات";
 const ARABIC_IMAGE_ALT = "أحمد، مدرب شخصي";
-const ARABIC_HEADING = "معرض التمارين";
-const ARABIC_SUBHEADING = "استكشف التفاني والنتائج لعملائنا.";
+const ARABIC_HEADING = "نتائج بعض العملاء";
+const ARABIC_SUBHEADING = "";
 const ARABIC_ALT_TEXT = "صورة تمرين";
 const ARABIC_MODAL_ALT_TEXT = "التمرين المحدد";
 
@@ -251,7 +249,7 @@ const ARABIC_PROGRAMS_SECTION = {
     {
       icon: "🧩",
       title: "بناء العضلات – تدريب قوة منظم للعضلات النحيفة.",
-      description: "ابن القوة والحجم مع برامج بناء العضلات بقيادة خبراء.",
+      description: "ابن القوة والحجم مع برامج بناء العضلات  .",
     },
   ],
 };
@@ -260,26 +258,27 @@ const ARABIC_TESTIMONIALS_DATA = [
   {
     id: 1,
     quote:
-      "لم أكن أعتقد أنني أستطيع تحقيق أهدافي في اللياقة البدنية حتى بدأت التدريب مع أحمد. نهجه الشخصي ودافعيته المستمرة أحدثا فرقاً كبيراً في رحلتي.",
-    author: "هيما حمدان",
-    role: "عميل، محب للرياضة",
-    initial: "ه",
+      "ana 3ayza ashkor Dr Ahmed Gad 3ala el motaba3a w 3ala el natiga el wslthala. deyman b fail eni akhss, bs howa deyman kan ma3aya b tashgee3o w wa2fto ma3aya 2drt awsl ll ana 3awza w lsa mkamla ma3ah. shokran ya Dr Ahmed  ❤❤",
+    author: "ندا من مصر",
+    role: "عميله",
+    initial: "N",
   },
+
   {
     id: 2,
     quote:
-      "خبرة أحمد وتفانيه ساعداني على تحويل جسدي بالكامل. النتائج تتحدث عن نفسها - لم أشعر قط بقوة وثقة أكبر.",
-    author: "سارة جونسون",
-    role: "عميل، نجح في فقدان الوزن",
-    initial: "س",
+      "والله ودي أشكر الدكتور أحمد على متابعتـه ووقفته معي بصراحة ما قصر دايم يشجعني ويعطيني دافع ومعاه قدرت أوصل لنتايج ما كنت أحلم فيها أنصح أي واحد وده يغير جسمه ويهتم بصحته يتابع معاه راح يلقى فرق كبير.",
+    author: "ذياد من السعوديه",
+    role: "عميل ",
+    initial: "Z",
   },
   {
     id: 3,
     quote:
-      "التدريب مع أحمد كان نقطة تحول. برامجه الشخصية ودعمه الثابت جعلا رحلتي في اللياقة البدنية ناجحة وممتعة.",
-    author: "مايك تشين",
-    role: "عميل، بناء العضلات",
-    initial: "م",
+      "والله ي دكتور يرتني عرفتك من زمان  كنت أسكني فات ومكنتش متخيل إني أقدر أخس دهون وأزيدعضلات في نفس الوقت، بس الحمد لله ومع المتابعة معاك والتشجيع ديما وتسمعني ديما لل مشاكل ال بتواجهني تعبتك معايا اوي 😂بس الحمدلله قدرت أوصل للي أنا فيه دلوقتي. كمان الدكتور كان دايمًا بيراعي إنشغالي ووقتي، وده خلاني أقدر ألتزم وأتابع معاه باستمرار وال خلاني استمر انو كان ببعاملني ك صحبي مش مدربي بس . بجد مش مصدق النتيجة، شكرًا يا دوك والله ❤",
+    author: "يوسف من مصر",
+    role: "عميل",
+    initial: "Y",
   },
 ];
 
@@ -294,7 +293,7 @@ export const BILLING_OPTIONS = [
 export const PLAN_OPTIONS = [
   { key: "economy", labelEn: "Economy", labelAr: "اقتصادية" },
   { key: "premium", labelEn: "Premium", labelAr: "مميزة" },
-  { key: "elite", labelEn: "Elite", labelAr: "نخبوية" },
+  { key: "elite", labelEn: "Outside Egypt", labelAr: "خارج مصر" },
 ];
 
 export const PRICING_PLANS = {
@@ -303,13 +302,13 @@ export const PRICING_PLANS = {
     nameAr: "المتابعة الأسبوعية",
     subtitleEn: "Economy Plan - Inside Egypt Only",
     subtitleAr: "الخطة الاقتصادية - داخل مصر فقط",
-    paymentMethodEn: "Payment via InstaPay",
-    paymentMethodAr: "الدفع عبر إنستاباي",
+    paymentMethodEn: "Payment via InstaPay or Wallet Number",
+    paymentMethodAr: "الدفع عبر إنستاباي اوعن طريق رقم المحفظه",
     paymentDetailsEn: "+201550043269",
     paymentDetailsAr: "+201550043269",
     prices: {
       "1month": {
-        price: "800",
+        price: "799",
         currency: "EGP",
         period: "/mo",
         originalPrice: "1600",
@@ -319,16 +318,16 @@ export const PRICING_PLANS = {
         currency: "EGP",
         period: "/3mo",
         originalPrice: "2000",
-        bonusEn: "1 month free",
-        bonusAr: "+1 شهر مجاناً",
+        bonusEn: "",
+        bonusAr: "",
       },
       "6months": {
         price: "1999",
         currency: "EGP",
         period: "/6mo",
         originalPrice: "4000",
-        bonusEn: "1 month free",
-        bonusAr: "+1 شهر مجاناً",
+        bonusEn: "",
+        bonusAr: "",
       },
       "1year": {
         price: "3999",
@@ -340,17 +339,17 @@ export const PRICING_PLANS = {
       },
     },
     featuresEn: [
-      "Custom nutrition plan for your goal",
+      "Customized nutrition plan for your goal",
       "Workout program with video explanations",
       "Diet changes every 10 days",
-      "Weekly performance review",
+      "Review your performance in the workout",
       "Communication once per week",
     ],
     featuresAr: [
       "نظام غذائي مخصص لهدفك",
       "برنامج تدريبي مشروح صوت وصورة",
       "تغيير الدايت كل 10 أيام",
-      "مراجعة أسبوعية للأداء",
+      "مراجعه آداءك في التمرين ",
       "التواصل والرد مرة أسبوعياً",
     ],
     buttonTextEn: "Get started",
@@ -359,15 +358,15 @@ export const PRICING_PLANS = {
   premium: {
     nameEn: "DAILY FOLLOW-UP",
     nameAr: "المتابعة اليومية",
-    subtitleEn: "Premium Plan - Inside & Outside Egypt",
-    subtitleAr: "الخطة المميزة - داخل وخارج مصر",
-    paymentMethodEn: "Payment via InstaPay",
-    paymentMethodAr: "الدفع عبر إنستاباي",
+    subtitleEn: "Premium Plan - Inside Egypt Only",
+    subtitleAr: "الخطة المميزة - داخل مصر فقط",
+    paymentMethodEn: "Payment via InstaPay or Wallet Number",
+    paymentMethodAr: "الدفع عبر إنستاباي اوعن طريق رقم المحفظه",
     paymentDetailsEn: "+201550043269",
     paymentDetailsAr: "+201550043269",
     prices: {
       "1month": {
-        price: "1000",
+        price: "999",
         currency: "EGP",
         period: "/mo",
         originalPrice: "2000",
@@ -389,71 +388,7 @@ export const PRICING_PLANS = {
         bonusAr: "+1 شهر مجاناً",
       },
       "1year": {
-        price: "3999",
-        currency: "EGP",
-        period: "/12mo",
-        originalPrice: "8000",
-        bonusEn: "Best package",
-        bonusAr: "أفضل باقة",
-      },
-    },
-    featuresEn: [
-      "24/7 follow-up with 24-hour response",
-      "Custom nutrition plan for all goals",
-      "Mental health support & motivation",
-      "Video workout program with explanations",
-      "Personal training videos by Ahmed",
-      "Video form check for all exercises",
-      "Diet changes every 10 days",
-      "Weekly video/audio calls",
-    ],
-    featuresAr: [
-      "متابعة طول الوقت + الرد خلال 24 ساعة",
-      "نظام غذائي مخصص لهدفك (خسارة دهون، زيادة عضلات، Recomp)",
-      "متابعة الحالة النفسية والتشجيع المستمر",
-      "برنامج تدريبي مشروح صوت وصورة",
-      "أنا اللي بتمرن بنفسي في الفيديوهات",
-      "متاح تصور نفسك لأي تمرين ومراجعة الأداء",
-      "تغيير الدايت كل 10 أيام",
-      "مكالمة فيديو أو صوتية أسبوعياً",
-    ],
-    buttonTextEn: "Get started",
-    buttonTextAr: "ابدأ الآن",
-  },
-  elite: {
-    nameEn: "ELITE PLAN",
-    nameAr: "الخطة النخبوية",
-    subtitleEn: "Elite Plan - Premium Features",
-    subtitleAr: "الخطة النخبوية - مميزات إضافية",
-    paymentMethodEn: "Payment via PayPal",
-    paymentMethodAr: "الدفع عبر باي بال",
-    paymentDetailsEn: "momoahmed722003@gmail.com",
-    paymentDetailsAr: "momoahmed722003@gmail.com",
-    prices: {
-      "1month": {
-        price: "1500",
-        currency: "EGP",
-        period: "/mo",
-        originalPrice: "3000",
-      },
-      "3months": {
-        price: "1999",
-        currency: "EGP",
-        period: "/3mo",
-        originalPrice: "4000",
-        bonusEn: "1 month free",
-        bonusAr: "+1 شهر مجاناً",
-      },
-      "6months": {
-        price: "2999",
-        currency: "EGP",
-        period: "/6mo",
-        originalPrice: "6000",
-        bonusEn: "1 month free",
-        bonusAr: "+1 شهر مجاناً",
-      },
-      "1year": {
-        price: "4999",
+        price: "4499",
         currency: "EGP",
         period: "/12mo",
         originalPrice: "10000",
@@ -462,24 +397,94 @@ export const PRICING_PLANS = {
       },
     },
     featuresEn: [
-      "Everything in Premium plan",
-      "1:1 personal coaching sessions",
-      "Custom meal plans with recipes",
-      "24/7 priority support",
-      "Advanced progress analytics",
-      "Equipment recommendations",
-      "Nutritional supplements guidance",
-      "Monthly body composition analysis",
+      "Daily follow-up within 24 hours",
+      "Customized nutrition plan for all goals",
+      "Diet adjustments  every 10 days",
+      "Customized training program tailored to your goal",
+      "Video workout program with explanations",
+      "Exercise form review & performance correction",
+      "Tailored supplement plan",
+      // "Mental health support & motivation",
+      "Weekly video/audio calls",
     ],
     featuresAr: [
-      "كل ما في الخطة المميزة",
-      "جلسات تدريب فردية شخصية",
-      "خطط وجبات مخصصة مع الوصفات",
-      "دعم أولوية على مدار الساعة",
-      "تحليلات متقدمة للتقدم",
-      "توصيات المعدات الرياضية",
-      "إرشاد المكملات الغذائية",
-      "تحليل تكوين الجسم شهرياً",
+      "متابعة  يوميه علي مدار 24 ساعة",
+      "  نظام غذائي مخصص لهدفك من الأكل اللي انت بتحبه  ",
+      "تعديل النظام الغذائي   كل 10 أيام",
+      "برنامج تدريبي مخصص حسب هدفك",
+      "شرح لكل التمارين   صوت وصورة",
+      " مراجعة آداءك في التمرين وتصحيح الأخطاء",
+      "خطة مكملات غذائية مخصصة حسب احتياجك",
+      // "متابعة الحالة النفسية والتشجيع المستمر",
+
+      "مكالمة فيديو أو صوتية أسبوعياً",
+    ],
+    buttonTextEn: "Get started",
+    buttonTextAr: "ابدأ الآن",
+  },
+  elite: {
+    nameEn: "Outside Egypt Plan",
+    nameAr: "خارج مصر",
+    subtitleEn: "Elite Plan - Outside Egypt Only",
+    subtitleAr: " خارج مصر -  متابعه مميزه وخاصه",
+    paymentMethodEn: "Payment via PayPal",
+    paymentMethodAr: "الدفع عبر باي بال",
+    paymentDetailsEn: "momoahmed722003@gmail.com",
+    paymentDetailsAr: "momoahmed722003@gmail.com",
+    prices: {
+      "1month": {
+        price: "70",
+        currency: "USD",
+        period: "/mo",
+        originalPrice: "150",
+      },
+      "3months": {
+        price: "149",
+        currency: "USD",
+        period: "/3mo",
+        originalPrice: "300",
+        bonusEn: "1 month free",
+        bonusAr: "+1 شهر مجاناً",
+      },
+      "6months": {
+        price: "249",
+        currency: "USD",
+        period: "/6mo",
+        originalPrice: "500",
+        bonusEn: "1 month free",
+        bonusAr: "+1 شهر مجاناً",
+      },
+      "1year": {
+        price: "449",
+        currency: "USD",
+        period: "/12mo",
+        originalPrice: "1000",
+        bonusEn: "Best package",
+        bonusAr: "أفضل باقة",
+      },
+    },
+    featuresEn: [
+      "Daily follow-up within 24 hours",
+      "Customized nutrition plan for all goals",
+      "Diet adjustments  every 10 days",
+      "Customized training program tailored to your goal",
+      "Video workout program with explanations",
+      "Exercise form review & performance correction",
+      "Tailored supplement plan",
+      // "Mental health support & motivation",
+      "Weekly video/audio calls",
+    ],
+    featuresAr: [
+      "متابعة  يوميه علي مدار 24 ساعة",
+      "  نظام غذائي مخصص لهدفك من الأكل اللي انت بتحبه  ",
+      "تعديل النظام الغذائي   كل 10 أيام",
+      "برنامج تدريبي مخصص حسب هدفك",
+      "شرح لكل التمارين   صوت وصورة",
+      " مراجعة آداءك في التمرين وتصحيح الأخطاء",
+      "خطة مكملات غذائية مخصصة حسب احتياجك",
+      // "متابعة الحالة النفسية والتشجيع المستمر",
+
+      "مكالمة فيديو أو صوتية أسبوعياً",
     ],
     buttonTextEn: "Get started",
     buttonTextAr: "ابدأ الآن",
@@ -562,16 +567,16 @@ export const CALCULATOR_TEXT = {
 
 const COUNTER_ITEMS_EN = [
   { value: 7, suffix: "+", label: "Years of Experience" },
-  { value: 200, suffix: "+", label: "Satisfied Clients" },
+  { value: 1000, suffix: "+", label: "Satisfied Clients" },
   // { value: 50, suffix: "+", label: "Completed Programs" },
-  { value: 99, suffix: "%", label: "Client Retention Rate" },
+  { value: 99, suffix: "%", label: "Client Satisfaction Rate" },
 ];
 
 const COUNTER_ITEMS_AR = [
   { value: 7, suffix: "+", label: "سنوات الخبرة" },
-  { value: 200, suffix: "+", label: "عملاء سعداء" },
+  { value: 1000, suffix: "+", label: "عملاء" },
   // { value: 50, suffix: "+", label: "برامج مكتملة" },
-  { value: 99, suffix: "%", label: "معدل الاحتفاظ بالعملاء" },
+  { value: 99, suffix: "%", label: "معدل تقيمات العملاء" },
 ];
 
 export const TEXTS = {
