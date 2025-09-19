@@ -259,7 +259,7 @@ const ARABIC_TESTIMONIALS_DATA = [
     id: 1,
     quote:
       "ana 3ayza ashkor Dr Ahmed Gad 3ala el motaba3a w 3ala el natiga el wslthala. deyman b fail eni akhss, bs howa deyman kan ma3aya b tashgee3o w wa2fto ma3aya 2drt awsl ll ana 3awza w lsa mkamla ma3ah. shokran ya Dr Ahmed  ❤❤",
-    author: "ندا من مصر",
+    author: "ندي من مصر",
     role: "عميله",
     initial: "N",
   },
