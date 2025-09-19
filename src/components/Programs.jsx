@@ -28,7 +28,7 @@ const Programs = () => {
           {texts.programsSection.items.map((item, index) => (
             <div
               key={index}
-              className="reveal-scale bg-black/40 p-6 rounded-xl shadow-lg flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 animate-[translateX_3s_linear_infinite]"
+              className="reveal-scale bg-black/40 p-6 rounded-xl shadow-lg flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 "
             >
               <span className="text-4xl mb-4">{item.icon}</span>
               <h3 className="text-lg sm:text-xl font-bold mb-3">

@@ -51,7 +51,7 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="reveal-up py-20 px-4 relative overflow-hidden border-b-2 border-dark/10 dark:border-light/10 animate-[translateY_3s_linear_infinite]
+      className="reveal-up py-20 px-4 relative overflow-hidden border-b-2 border-dark/10 dark:border-light/10 
 "
     >
       {/* Background Pattern */}
