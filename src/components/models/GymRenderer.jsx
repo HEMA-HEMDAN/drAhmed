@@ -101,7 +101,7 @@ const GymRenderer = () => {
   // });
 
   return (
-    <section className="w-full flex justify-center lg:justify-around  items-center flex-col  lg:flex-row mt-12">
+    <section className="reveal-up w-full flex justify-center lg:justify-around  items-center flex-col  lg:flex-row mt-12">
       <div className="w-[90vw] h-[90vw]   lg:w-[70vh] lg:h-[70vh]   shadow-2xl rounded-lg overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
         <Canvas
           camera={{ position: [camX, camY, camZ], fov }}

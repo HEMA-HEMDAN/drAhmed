@@ -51,7 +51,8 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="py-20 px-4 relative overflow-hidden border-b-2 border-dark/10 dark:border-light/10"
+      className="reveal-up py-20 px-4 relative overflow-hidden border-b-2 border-dark/10 dark:border-light/10 
+"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10 dark:opacity-5">

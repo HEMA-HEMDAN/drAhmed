@@ -63,7 +63,10 @@ const Calculator = () => {
   }, [sex, age, weight, height, activity, target]);
 
   return (
-    <section id="calorie-calculator" className="max-w-3xl mx-auto px-4 py-12">
+    <section
+      id="calorie-calculator"
+      className="reveal-up max-w-3xl mx-auto px-4 py-12"
+    >
       <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-gray-100">
         {texts.title}
       </h2>

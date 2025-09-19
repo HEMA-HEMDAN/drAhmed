@@ -4,7 +4,7 @@ import logo from "../../public/assets/logo-dark.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-light pt-16 pb-4 border-t border-neutral-800">
+    <footer className="reveal-up bg-gradient-to-br from-gray-900 via-gray-800 to-black text-light pt-16 pb-4 border-t border-neutral-800">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
           <img
@@ -23,6 +23,7 @@ const Footer = () => {
                 key={label}
                 aria-label={label}
                 href={href}
+                target="_blank"
                 className="hover:opacity-80 h-10 w-10 md:h-12 md:w-12 flex items-center justify-center hover:bg-white hover:text-black rounded-full transition-all duration-300 ease-in-out"
               >
                 <Icon />
@@ -38,6 +39,7 @@ const Footer = () => {
             <a
               key={text}
               href={href}
+              target="_blank"
               className="relative text-light text-lg font-bold 
              after:absolute after:left-0 after:-bottom-1 
              after:h-[2px] after:w-0 after:bg-white 
