@@ -16,7 +16,7 @@ const App = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
-      const defaults = { ease: "power3.out", duration: 1 };
+      const defaults = { ease: "power3.out", duration: 0.8 };
 
       gsap.utils.toArray(".reveal-up").forEach((el) => {
         gsap.from(el, {

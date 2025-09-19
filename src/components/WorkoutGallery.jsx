@@ -1,38 +1,38 @@
 import React, { useState, useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLanguage } from "../contexts/LanguageContext";
 import { TEXTS } from "../consts/index.js";
 const WorkoutGallery = () => {
   const { language } = useLanguage();
   const texts = TEXTS[language];
   const [selectedImg, setSelectedImg] = useState(null);
-  const sectionRef = useRef(null);
+  // const sectionRef = useRef(null);
   const modalImgRef = useRef(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      const cards = gsap.utils.toArray(".gallery-card");
-      cards.forEach((card, index) => {
-        gsap.from(card, {
-          opacity: 0,
-          scale: 0.9,
-          y: 30,
-          duration: 0.6,
-          ease: "power3.out",
-          delay: Math.min(index * 0.05, 0.4),
-          scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-        });
-      });
-    }, sectionRef);
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
+  //   const ctx = gsap.context(() => {
+  //     const cards = gsap.utils.toArray(".gallery-card");
+  //     cards.forEach((card, index) => {
+  //       gsap.from(card, {
+  //         opacity: 0,
+  //         scale: 0.9,
+  //         y: 30,
+  //         duration: 0.6,
+  //         ease: "power3.out",
+  //         delay: Math.min(index * 0.05, 0.4),
+  //         scrollTrigger: {
+  //           trigger: card,
+  //           start: "top 85%",
+  //           toggleActions: "play none none reverse",
+  //         },
+  //       });
+  //     });
+  //   }, sectionRef);
 
-    return () => ctx.revert();
-  }, []);
+  //   return () => ctx.revert();
+  // }, []);
 
   // Close modal with ESC key
   useEffect(() => {
@@ -50,8 +50,7 @@ const WorkoutGallery = () => {
 
   return (
     <section
-      ref={sectionRef}
-      className="min-h-screen px-2 py-10 md:px-16 md:py-28 border-b-2 border-dark/10 dark:border-light/10"
+      className="reveal-up min-h-screen px-2 py-10 md:px-16 md:py-28 border-b-2 border-dark/10 dark:border-light/10"
       id="workouts"
     >
       {/* Heading */}
