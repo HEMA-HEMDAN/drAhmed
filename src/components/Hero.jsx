@@ -62,12 +62,25 @@ const FitnessApp = () => {
     >
       {/* Background Video */}
       <video
-        src="/assets/herrro.mp4"
         autoPlay
         loop
         muted
         className="absolute inset-0 h-full w-full object-cover"
-      />
+      >
+        <source src="/assets/herrro.mp4" type="video/mp4" />
+        <track
+          src="captions_en.vtt"
+          kind="captions"
+          srclang="en"
+          label="english_captions"
+        />
+        <track
+          src="captions_ar.vtt"
+          kind="captions"
+          srclang="ar"
+          label="spanish_captions"
+        />
+      </video>
       {/* Background Image
       <img
         src="/assets/hero.jpg" // Replace with your own image
