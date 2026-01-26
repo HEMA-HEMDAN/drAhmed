@@ -67,8 +67,8 @@ const FitnessApp = () => {
         muted
         className="absolute inset-0 h-full w-full object-cover"
       >
-        <source src="../../public/assets/herrro.mp4" type="video/mp4" />
-        <track
+        <source src="/herrro.mp4" type="video/mp4" />
+        {/* <track
           src="captions_en.vtt"
           kind="captions"
           srclang="en"
@@ -79,7 +79,7 @@ const FitnessApp = () => {
           kind="captions"
           srclang="ar"
           label="spanish_captions"
-        />
+        /> */}
       </video>
       {/* Background Image
       <img
