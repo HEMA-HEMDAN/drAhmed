@@ -19,7 +19,7 @@ const Home = () => {
       <Programs />
       <Testimonials />
       <Pricing />
-      <WorkoutGallery />
+      {/* <WorkoutGallery /> */}
       {/* <GymRenderer /> */}
       <Calculator />
       <Contact />
